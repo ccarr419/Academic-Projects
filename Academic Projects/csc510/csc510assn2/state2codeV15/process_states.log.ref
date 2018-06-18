@@ -1,0 +1,47 @@
+000000000000,LOG,processor 0,init,init
+000000000000,LOG,processor 0,init,APPROACH
+000000000000,LOG,processor 0,init,ARRIVE
+000000000000,LOG,processor 0,init,DEPART
+000000000000,LOG,processor 0,afterstart,APPROACH
+000000000000,LOG,thread 0 process 0,init,init
+000000000000,LOG,processor 0,afterstart,fork
+000000000000,LOG,processor 0,afterstart,ARRIVE
+000000000001,LOG,thread 0 process 0,init,APPROACH
+000000000001,LOG,thread 0 process 0,init,ARRIVE
+000000000001,LOG,thread 0 process 0,init,DEPART
+000000000001,LOG,thread 0 process 0,ready,APPROACH
+000000000001,LOG,thread 0 process 0,ready,sleep
+000000000001,LOG,thread 0 process 0,ready,ARRIVE
+000000000001,LOG,processor 0,afterstart,DEPART
+000000000001,LOG,processor 0,alldone,APPROACH
+000000000001,LOG,processor 0,alldone,ARRIVE
+000000000001,LOG,processor 0,alldone,DEPART
+000000000001,LOG,processor 0,<defunct>,?
+000000000051,LOG,thread 0 process 0,ready,DEPART
+000000000051,LOG,thread 0 process 0,running,APPROACH
+000000000051,LOG,thread 0 process 0,running,cpu
+000000000051,LOG,thread 0 process 0,running,ARRIVE
+000000000061,LOG,thread 0 process 0,running,DEPART
+000000000061,LOG,thread 0 process 0,ready,APPROACH
+000000000061,LOG,thread 0 process 0,ready,sleep
+000000000061,LOG,thread 0 process 0,ready,ARRIVE
+000000000111,LOG,thread 0 process 0,ready,DEPART
+000000000111,LOG,thread 0 process 0,running,APPROACH
+000000000111,LOG,thread 0 process 0,running,io
+000000000111,LOG,iounit -1,init,io
+000000000111,LOG,thread 0 process 0,running,ARRIVE
+000000007277,LOG,thread 0 process 0,running,io
+000000007277,LOG,thread 0 process 0,running,DEPART
+000000007277,LOG,thread 0 process 0,ready,APPROACH
+000000007277,LOG,thread 0 process 0,ready,sleep
+000000007277,LOG,thread 0 process 0,ready,ARRIVE
+000000007327,LOG,thread 0 process 0,ready,DEPART
+000000007327,LOG,thread 0 process 0,running,APPROACH
+000000007327,LOG,thread 0 process 0,running,exit
+000000007327,LOG,thread 0 process 0,running,ARRIVE
+000000007328,LOG,thread 0 process 0,running,DEPART
+000000007328,LOG,thread 0 process 0,terminated,APPROACH
+000000007328,LOG,thread 0 process 0,terminated,ARRIVE
+000000007328,LOG,thread 0 process 0,terminated,DEPART
+000000007328,LOG,thread 0 process 0,<defunct>,?
+000000007328,MSG,scheduler,Scheduler exiting at time 7328 within time limit 10000, simulation has finished.

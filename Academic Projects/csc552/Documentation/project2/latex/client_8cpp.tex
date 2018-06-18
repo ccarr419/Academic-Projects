@@ -1,0 +1,167 @@
+\hypertarget{client_8cpp}{
+\section{client.cpp File Reference}
+\label{client_8cpp}\index{client.cpp@{client.cpp}}
+}
+
+
+This file acts as client and prompts the user for input. The prompt will accept either two floating-\/point numbers or the words 'total' or 'exit'. All input will be written to a pipe to be received by the server. The server will process the information sent and send a message back in response. The client will then display the message from the server and start the prompt again until the user enters 'exit'. All errors dealing with read and write are being accounted for with the use of perror (stderr).  
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$sstream$>$}\par
+{\ttfamily \#include $<$cstdio$>$}\par
+{\ttfamily \#include $<$cstdlib$>$}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{client_8cpp_ae9849bff2b260ca5e82bea2d7d4c7d14}{isSame} (string, string)
+\begin{DoxyCompactList}\small\item\em This function takes a two string arguments to compare. It will convert each letter of the first string argument to upper case to ensure case insensitivity. If the string matches the second string then true is returned. If not false is returned. It is assumed that he second argument should be an all caps string and will always return false if it is not. \item\end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{client_8cpp_a1e8a84f803454530da1a4c8d5e1a38b8}{pkgNum} (string, string)
+\begin{DoxyCompactList}\small\item\em This function takes two string arguments and attempts to package them together into a const char$\ast$ value so it can be written into a pipe. The output format will be: \char`\"{}number1 $\ast$SPACE$\ast$ number2\char`\"{} This function also assumes that the strings are numeric in nature and does not check the strings for correct format. \item\end{DoxyCompactList}\item 
+bool \hyperlink{client_8cpp_aa957124ed9e3e5aba734bd303eaba062}{readMessage} (int)
+\begin{DoxyCompactList}\small\item\em This function takes the file descriptor that should be the read end of a pipe and checks to see if the server wrote anything into the pipe. The message will be printed to the screen if it was properly received. If the message failed to be received an error message will be thrown through perror (stderr) and false will be returned. Otherwise true will be returned. This function assumes that the file descriptor is the read end of a pipe. \item\end{DoxyCompactList}\item 
+bool \hyperlink{client_8cpp_a5d33ecdcad318e15f6a9a6997d4d4bfa}{writeMessage} (int, const char $\ast$, size\_\-t)
+\begin{DoxyCompactList}\small\item\em This function takes the file descriptor that should be the write end of a pipe and writes the message determined by the 2nd argument to the pipe. The message will be of the size given in the 3rd argument. If the message could not be sent an error message will be thrown through perror (stderr) and false will be returned. Otherwise true will be returned. This function assumes that the file descriptor is the write end of a pipe. \item\end{DoxyCompactList}\item 
+int \hyperlink{client_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\hypertarget{client_8cpp_ae9849bff2b260ca5e82bea2d7d4c7d14}{
+\index{client.cpp@{client.cpp}!isSame@{isSame}}
+\index{isSame@{isSame}!client.cpp@{client.cpp}}
+\subsubsection[{isSame}]{\setlength{\rightskip}{0pt plus 5cm}bool isSame (string {\em str1}, \/  string {\em str2})}}
+\label{client_8cpp_ae9849bff2b260ca5e82bea2d7d4c7d14}
+$\ast$ Function Name: isSame Function Type: inspector Parameters: string -\/ import only -\/ string to be modified and compared string -\/ import only -\/ string to be compared to Return Value: bool -\/ true if match, false if no match
+
+isSame will take a two strings as arguments. It will iterate through the first string turning every letter to upper case. Once the string has been converted to all upper case then it will be compared to the second string. If the strings match then the function will return true. If not then false will be returned. This function ensures a case-\/insensitive comparison. This function also assumes that both strings are numeric and the second string is all upper case. 
+
+
+\begin{DoxyCode}
+143                                       {
+144         //Go to each letter in str1 and make it upper case
+145      for(int i = 0; i < str1.length(); i++)
+146           str1[i] = toupper(str1[i]);
+147      if(str1 == str2)
+148           return true; //strings match
+149      else
+150           return false; //strings do not match
+151 }
+\end{DoxyCode}
+\hypertarget{client_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{
+\index{client.cpp@{client.cpp}!main@{main}}
+\index{main@{main}!client.cpp@{client.cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (int {\em argc}, \/  char $\ast$$\ast$ {\em argv})}}
+\label{client_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+
+\begin{DoxyCode}
+98                                 {
+99         string TOTAL = "TOTAL", EXIT = "EXIT";
+100         string n1, n2; //Numbers (or commands) to be entered in prompt
+101         int fd[2]; //The pipe the client will be using
+102         
+103         fd[0] = atoi(argv[0]); //Convert to int to get the read end of pipe
+104         fd[1] = atoi(argv[1]); //Convert to int to get the write end of pipe
+105         
+106         //Display prompt to user once
+107         cout << "Enter two floating-point numbers ";
+108         cout << "or the words 'TOTAL' or ' EXIT'\n";
+109         
+110         cout << "> ";
+111         //Get only one input string to test if it's 'TOTAL' or 'EXIT' first
+112         cin >> n1; 
+113         
+114         if(isSame(n1, "TOTAL")) //User entered 'TOTAL' - write total to server
+115                 writeMessage(fd[1], "TOTAL", 32);
+116                 
+117         else if(isSame(n1, "EXIT")) //User entered 'EXIT' - write exit to server
+118                 writeMessage(fd[1], "EXIT", 32);
+119         
+120         //If not total or exit then must get another number
+121         else {
+122                 cin >> n2; //Get and package both numbers - write package to serv
+      er
+123                 writeMessage(fd[1], pkgNum(n1, n2), BUFSIZ);
+124         }
+125         
+126         sleep(1);       //Sleep to prevent race conditions
+127         readMessage(fd[0]+1); //Get message from server if any
+128         
+129         //Close pipe ends since we are done here
+130         close(fd[0]+1);
+131         close(fd[1]);
+132      return 0;
+133 }
+\end{DoxyCode}
+\hypertarget{client_8cpp_a1e8a84f803454530da1a4c8d5e1a38b8}{
+\index{client.cpp@{client.cpp}!pkgNum@{pkgNum}}
+\index{pkgNum@{pkgNum}!client.cpp@{client.cpp}}
+\subsubsection[{pkgNum}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ pkgNum (string {\em num1}, \/  string {\em num2})}}
+\label{client_8cpp_a1e8a84f803454530da1a4c8d5e1a38b8}
+$\ast$ Function Name: pkgNum Function Type: facilitator Parameters: string -\/ import only -\/ the first number in the package string -\/ import only -\/ the second number in the package Return Value: const char$\ast$ -\/ a cstring containing two numbers
+
+pkgNum takes two string arguments and places them inside on const char$\ast$. A stringstream is used to make the conversion. The first string is stream inserted into the stringstream followed by a space and the second string argument. The string stream is converted into string and placed inside a temporary holding string. The temporary string is then converted into a cstring and returned. 
+
+
+\begin{DoxyCode}
+160                                              {
+161         stringstream str;       
+162         str << num1;
+163         str << " ";
+164         str << num2;
+165         string temp = str.str();
+166         return temp.c_str();
+167 }
+\end{DoxyCode}
+\hypertarget{client_8cpp_aa957124ed9e3e5aba734bd303eaba062}{
+\index{client.cpp@{client.cpp}!readMessage@{readMessage}}
+\index{readMessage@{readMessage}!client.cpp@{client.cpp}}
+\subsubsection[{readMessage}]{\setlength{\rightskip}{0pt plus 5cm}bool readMessage (int {\em fd})}}
+\label{client_8cpp_aa957124ed9e3e5aba734bd303eaba062}
+$\ast$ Function Name: readMessage Function Type: facilitator Parameters: int -\/ import only -\/the fdes for the read end of the pipe Return Value: bool -\/ true if message sent, false if not
+
+readMessage takes a single integer argument that represents the file descriptor of the pipe end to read out of. First a message holder of the max size allowed in the system-\/buffer will be made. Then a message, if one exists will be place inside the message holder. The message will then be printed to the screen. If the message failed to be received then an error message will be printed through perror (stderr) and false will be returned. Otherwise true will be returned. 
+
+
+\begin{DoxyCode}
+177                          {
+178         //Create a static message container of the max size the buffer can hold
+179         static char message[BUFSIZ];
+180         //Read from pipe and place it in the message container
+181         if(read(fd, message, BUFSIZ) != -1) {
+182                 cout << message;
+183                 fflush(stdout); //Get everything out of the pipe
+184         }
+185         else {
+186                 perror("Message failed to be received\n");
+187                 return true;
+188         }
+189         return false;
+190 }
+\end{DoxyCode}
+\hypertarget{client_8cpp_a5d33ecdcad318e15f6a9a6997d4d4bfa}{
+\index{client.cpp@{client.cpp}!writeMessage@{writeMessage}}
+\index{writeMessage@{writeMessage}!client.cpp@{client.cpp}}
+\subsubsection[{writeMessage}]{\setlength{\rightskip}{0pt plus 5cm}bool writeMessage (int {\em fd}, \/  const char $\ast$ {\em message}, \/  size\_\-t {\em buf})}}
+\label{client_8cpp_a5d33ecdcad318e15f6a9a6997d4d4bfa}
+$\ast$ Function Name: writeMessage Function Type: facilitator Parameters: int -\/ import only -\/ the fdes for the write end of the pipe const char$\ast$ -\/ import only -\/ the message to be sent size\_\-t -\/ import only -\/ the size of the message to be sent Return Value: bool -\/ true if message sent, false if not
+
+writeMessage will take three arguments. The first argument is the file descriptor which represents the pipe end the client will write to. The second argument is the message to be written to the pipe. The third is the size of the message to be sent. A message of the size buf will then be constructed and sent to the file descriptor pipe end. If the message was not send then an error message will be printed through perror (stderr) and false will be returned. Otherwise true will be returned. 
+
+
+\begin{DoxyCode}
+200                                                            {
+201         //Write into the pipe to communicate with he server
+202         if(write(fd, message, buf) != -1) 
+203                 fflush(stdout); //Get everything out of the pipe
+204                         
+205         else {
+206                 perror("Message failed to be sent\n");
+207                 return false;
+208         }
+209         return true;
+210 }
+\end{DoxyCode}

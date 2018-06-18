@@ -1,0 +1,211 @@
+<!doctype html>
+<!-- 
+* Author:       Christian Carreras
+* File Name:    Yahtzee.html
+* File Version: 3.0
+* File Date:    12/04/2017
+* Due Date:     12/13/2017
+* Assignment:   #5
+* Professor:    Dr. Dylan Schwesinger
+* Course #:     CSC421
+* Course Name:  Web-Based Software Design & Development
+* University:   Kutztown University
+* Major:        CSCM Software Development
+* Purpose:      This file holds the bare-bones html that will be used by a java
+*               file to inject content at runtime. This file creates containers
+*               with ids to information and widgets can be placed precisely.
+*               Divs are used to split the screen between the game container
+*               and scoresheet container. Both divs contain a table which is
+*               used to orgranize widgets and information for the game.
+-->
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link type="text/css" rel="stylesheet" href="Yahtzee.css">
+        <title>Kutztown University CSC421 Yahtzee Web Project Christian Carreras</title>
+        
+        <script type="text/javascript" language="javascript" 
+            src="yahtzee/yahtzee.nocache.js"></script>
+    </head>
+    <body>
+        <!-- If the browser does not support javascript -->
+        <noscript>
+            <div style="width: 22em; position: absolute; 
+                    left: 50%; margin-left: -11em; color: red; 
+                    background-color: white; border: 1px solid red; 
+                    padding: 4px; font-family: sans-serif">
+                Your web browser must have JavaScript enabled
+                in order for this application to display correctly.
+            </div>
+        </noscript>
+        <div id="appFront" class="dimScreen" hidden></div>
+        <!-- Scoresheet div holds the player's score.
+            Scores should be injected into their respective categories.
+            Alternate the background color for better readability-->
+        <div id="ScoreContainer" class="left">
+            <!-- Hide so it's not displayed on page load. This is just a 
+                template to be used incase there is more than one player -->
+            <div id="Scoresheet" hidden>
+                <table class="sideTable">
+                    <tr>
+                        <th style="padding: 10px"><u>UPPER SECTION</u></th>
+                        <th style="padding: 10px"><u>HOW TO SCORE</u></th>
+                        <td></td>
+                    </tr>
+                    <tr class="altRow">
+                        <th class="tSide">Aces</th>
+                        <td class="tSide">Count and add only aces</td>
+                        <td id="CatContainer_0" class="tScore"></td>
+                    </tr>
+                    <tr class="gridRow">
+                        <th class="tSide">Twos</th>
+                        <td class="tSide">Count and add only twos</td>
+                        <td id="CatContainer_1" class="tScore"></td>
+                    </tr>
+                    <tr class="altRow">
+                        <th class="tSide">Threes</th>
+                        <td class="tSide">Count and add only threes</td>
+                        <td id="CatContainer_2" class="tScore"></td>
+                    </tr>
+                    <tr class="gridRow">
+                        <th class="tSide">Fours</th>
+                        <td class="tSide">Count and add only fours</td>
+                        <td id="CatContainer_3" class="tScore"></td>
+                    </tr>
+                    <tr class="altRow">
+                        <th class="tSide">Fives</th>
+                        <td class="tSide">Count and add only fives</td>
+                        <td id="CatContainer_4" class="tScore"></td>
+                    </tr>
+                    <tr class="gridRow">
+                        <th class="tSide">Sixes</th>
+                        <td class="tSide">Count and add only sixes</td>
+                        <td id="CatContainer_5" class="tScore"></td>
+                    </tr>
+                    <tr class="altRow">
+                        <th class="tSide">TOTAL SCORE</th>
+                        <td class="tSide">---------------------&gt;</td>
+                        <td id="TotalContainer_0" class="tScore"><b>0</b></td>
+                    </tr>
+                    <tr class="gridRow">
+                        <th class="tSide">BONUS</th>
+                        <td class="tSide">Score 35 if Total &lt; 63</td>
+                        <td id="BonusContainer_0" class="tScore"><b>0</b></td>
+                    </tr>
+                    <tr class="altRow">
+                        <th class="tSide">TOTAL UPPER SECTION</th>
+                        <td class="tSide">---------------------&gt;</td>
+                        <td id="TotalContainer_1" class="tScore"><b>0</b></td>
+                    </tr>
+                    <tr>
+                        <th style="padding: 10px"><u>LOWER SECTION</u></th>
+                        <th></th>
+                        <td></td>
+                    </tr>
+                    <tr class="altRow">
+                        <th class="tSide">3 Of A Kind</th>
+                        <td class="tSide">Add total of all dice</td>
+                        <td id="CatContainer_6" class="tScore"></td>
+                    </tr>
+                    <tr class="gridRow">
+                        <th class="tSide">4 Of A Kind</th>
+                        <td class="tSide">Add total of all dice</td>
+                        <td id="CatContainer_7" class="tScore"></td>
+                    </tr>
+                    <tr class="altRow">
+                        <th class="tSide">Full House</th>
+                        <td class="tSide">Score 25</td>
+                        <td id="CatContainer_8" class="tScore"></td>
+                    </tr>
+                    <tr class="gridRow">
+                        <th class="tSide">Small Straight</th>
+                        <td class="tSide">Score 30</td>
+                        <td id="CatContainer_9" class="tScore"></td>
+                    </tr>
+                    <tr class="altRow">
+                        <th class="tSide">Large Straight</th>
+                        <td class="tSide">Score 40</td>
+                        <td id="CatContainer_10" class="tScore"></td>
+                    </tr>
+                    <tr class="gridRow">
+                        <th class="tSide">Yahtzee</th>
+                        <td class="tSide">Score 50</td>
+                        <td id="CatContainer_11" class="tScore"></td>
+                    </tr>
+                    <tr class="altRow">
+                        <th class="tSide">Chance</th>
+                        <td class="tSide">Add total of all 5 dice</td>
+                        <td id="CatContainer_12" class="tScore"></td>
+                    </tr>
+                    <tr class="gridRow">
+                        <th class="tSide">Yahtzee</th>
+                        <td class="tSide">&#10003; for each bonus</td>
+                        <td id="YahtzeeCountContainer_" class="tScore"></td>
+                    </tr>
+                    <tr class="altRow">
+                        <th class="tSide">BONUS</th>
+                        <td class="tSide">Score 100 for each &#10003;</td>
+                        <td id="BonusContainer_1" class="tScore"><b>0</b></td>
+                    </tr>
+                    <tr class="gridRow">
+                        <th class="tSide">TOTAL UPPER SECTION</th>
+                        <td class="tSide">---------------------&gt;</td>
+                        <td id="TotalContainer_2" class="tScore"><b>0</b></td>
+                    </tr>
+                    <tr class="altRow">
+                        <th class="tSide">TOTAL LOWER SECTION</th>
+                        <td class="tSide">---------------------&gt;</td>
+                        <td id="TotalContainer_3" class="tScore"><b>0</b></td>
+                    </tr>
+                    <tr class="gridRow">
+                        <th class="tSide">GRAND TOTAL</th>
+                        <td class="tSide">---------------------&gt;</td>
+                        <td id="TotalContainer_4" class="tScore"><b>0</b></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Game div which holds the functionality of the game such as
+                buttons that control the flow of the game -->
+        <div class="game">
+            <table align="center">
+                <caption>
+                    <img class="logo" src="yahtzee/images/yahtzeeLogo.png" alt="Yahtzee">
+                </caption>
+                <tr> <!-- Current round number -->
+                    <td id="RoundNumContainer" class="gameProgress">Round #1</td>
+                </tr>
+                <tr> <!-- Current roll number -->
+                    <td id="RollNumContainer" class="gameProgress">Roll #1</td>
+                </tr>
+                <tr> <!-- Current player's turn -->
+                    <td id="CurrentPlayer" class="gamePlayer"></td>
+                </tr>
+                <tr> <!-- Container that should hold the dice -->
+                    <td id="GameContainer"></td>
+                </tr>
+                <tr> <!-- Container that should hold the roll button -->
+                    <td id="RollContainer"></td>
+                </tr>
+                <tr> <!-- Container that should hold the help button -->
+                    <td id="HelpContainer"></td>
+                </tr>
+                <tr> <!-- Container that should hold the list of categories to choose from -->
+                    <td id="CategoryContainer">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <!-- Basic information about the author and game -->
+                        <span class="footer">Created by Christian Carreras, 
+                            Kutztown University 2017
+                            <br/>Yahtzee © 2017 Hasbro, Inc.
+                        </span>
+                    </td>
+                </tr> <!-- Mute sounds if the user is so inclined -->
+                <div id="MuteContainer" class="soundOp"></div>
+            </table>
+        </div>
+    </body>
+</html>

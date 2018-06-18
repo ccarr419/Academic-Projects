@@ -1,0 +1,74 @@
+CSc 136       Fall 2013		Updates to Array class to make it partially filled
+
+Entity:Line #	Action	Description
+_______________________________________________________________________________________________________________
+Updates & Fixes For Project 3b
+*Array.h	Change	Updated all id blocks to give more information about the class
+*Array.cpp: 35	Change	Fixed problem in copy constructor from setElements(0) to
+			setElements(getElements())
+*Array.cpp: 38	Change	Fixed problem so copy constructor doesn't copy garbage
+*Array.cpp:87,90
+		Change	Fixed problem with == operator checking garbage elements
+*Array.cpp:103,113
+		Change 	Fixed problem with [] operators accessing garbage elements
+*Array.cpp: 76	Change	Change = operator to only copy over in use elements
+*Array.cpp: 79	Add	Add setElements() to = operator
+*Array.cpp: 132 Change	addTerm now calls += instead
+*Array.cpp: 167 Change	Changed += to only add a Term to the end and update elementsInUse
+*term.h:	Change	Updated all id blocks to give more information about the class
+*term.cpp:	Change 	Updated comments to be more detailed and informative 
+_______________ _______	_______________________________________________________________________________________
+Array.h:38	Change	Change data member 'size' to 'capacity'
+Array.h:39	Add 	Add new data member 'elementsInUse'
+Array.h:17,18	Change	Names of set and get for former size (now capacity) 
+				changed to setCapacity and getCapacity
+Array.h: 10	Add	Add term class to the array class
+Array.h: 32,33	Add	Add both addTerm functions to add terms to the array
+Array.h: 28,29	Change 	Change return types of the [] operators to Term
+Array.h: 41	Change 	Change data type of *ptr from int to Term
+Array.h: 34	Add	Add cDupLoc as a class memeber
+Array.h: 35	Add	Add sort as a class member
+Array.h: 36	Add 	Add += operator as a class member
+Array.h:	Remove	Remove >> operator from class
+_______________ _______ _______________________________________________________________________________________
+Array.cpp:50,55
+setCapacity	Change	Change name from setSize() 
+				Change	Member set was size; it is now capacity
+getCapacity	Change	Change name from getSize() 
+				Change size to capacity
+Array.cpp:19,32,71
+	 	Change	Update all calls formerly to setSize to reflect new names
+Array.cpp:20,25,32,33,38,69,71,72,76,87,90,103,113
+	 	Change	Update all calls formerly to getSize to reflect new names
+Array.cpp:20,33,72
+		Change	Update all appropriate ptr data types from int to Term
+Array.cpp:100,110
+		Change	Update return types of the [] operators
+Array.cpp: 8
+		Add	Add class Term to add the Array class
+Array.cpp:122,125
+		Add	Add addTerm members to add terms to the array
+Array.cpp: 188	
+		Change	Change << operator to work with term class
+Array.cpp: 147	Add	Add sort code to class
+Array.cpp: 152	Add	Add cDupLoc code to class
+Array.cpp: 9	Add	Add #include "SortSearch.h"
+Array.cpp: 166	Add	Add += operator code to class
+Array.cpp:	Remove	Remove >> operator code
+_______________ _______ _______________________________________________________________________________________
+Array_tst.cpp: 18
+		Add	Add #include "Term.h" to add the term class
+Array_tst.cpp: 181
+		Change	Updated addTerm to use addTerm members in array class
+Array_tst.cpp 144
+		Change	Updated evaluateTerm to use terms and () operator
+Array_tst.cpp: 162
+		Change 	Updated multiplyTerm to use terms and *= operator
+Array_tst.cpp:	Remove	Remove the call to sort in the >> operator
+_______________ _______ _______________________________________________________________________________________
+SortSearch.h: 49,50
+		Change	Change declaration of i so scope is longer than loop
+
+
+
+

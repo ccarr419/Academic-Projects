@@ -1,0 +1,185 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!--
+     Name:         	Christian Carreras
+     Assignment 4: 	Forms
+     Purpose:		Find the total price of shipping on items using forms
+     URL:		http://unixweb.kutztown.edu/~ccarr419/assignment4.html
+     Course:		CSC 242 - Fall 2013
+     Due Date:		10/28/2013
+     Complications:	Could not find out why shipping & handling, tax, and
+			total price was not transferring when submit was clicked
+-->
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Assignment 4</title>
+      <h3 style = "text-align: center">Assignment 4</h3>
+      <a href = "http://unixweb.kutztown.edu/~ccarr419/index.html">Home</a>
+      <hr/>
+      
+      <h1>Order Form</h1>
+      
+     
+      
+      <script type = "text/javascript">
+		<!--
+			function calc()
+			{	//Variables
+				var iPrice = document.getElementById("iPrice").value;
+				iPrice = parseInt(iPrice);
+				var paTax = 0.06;
+				var SnH;
+				var tax;
+				var subTotal;
+				var total;
+				//Check if input is a number and equal or less than zero
+				if(isNaN(iPrice) == true || iPrice <= 0) //Display error message if true
+					window.alert("Please enter a valid number for price");
+				else
+				{	if(document.getElementById("shipMS").checked) //Standard shipping
+					{	if(iPrice < 25) //If item price is less than 20
+						{	SnH = 4.5;
+							subTotal = iPrice + SnH;
+							tax = subTotal * paTax;
+							total = subTotal + tax;
+							SnH = SnH.toFixed(2); //Two decimal spaces for currency
+							tax = tax.toFixed(2);
+							total = total.toFixed(2);
+							document.getElementById("SnH").value = ("$" +SnH);
+							document.getElementById("tax").value = ("$" +tax);
+							document.getElementById("total").value = ("$" +total);
+						}
+						
+						else if(iPrice < 50) //If item price is less than 50
+						{	SnH = 7;
+							subTotal = iPrice + SnH;
+							tax = subTotal * paTax;
+							total = subTotal + tax;
+							SnH = SnH.toFixed(2);
+							tax = tax.toFixed(2);
+							total = total.toFixed(2);
+							document.getElementById("SnH").value = ("$" +SnH);
+							document.getElementById("tax").value = ("$" +tax);
+							document.getElementById("total").value = ("$" +total);
+						}
+						
+						else //If item price is greater than 50
+						{	SnH = 10.25;
+							subTotal = iPrice + SnH;
+							tax = subTotal * paTax;
+							total = subTotal + tax;
+							SnH = SnH.toFixed(2);
+							tax = tax.toFixed(2);
+							total = total.toFixed(2);
+							document.getElementById("SnH").value = ("$" +SnH);
+							document.getElementById("tax").value = ("$" +tax);
+							document.getElementById("total").value = ("$" +total);
+						}
+					}
+					
+					else if(document.getElementById("shipME").checked) //Expedited shipping
+					{	if(iPrice < 25)
+						{	SnH = 9.5;
+							subTotal = iPrice + SnH;
+							tax = subTotal * paTax;
+							total = subTotal + tax;
+							SnH = SnH.toFixed(2);
+							tax = tax.toFixed(2);
+							total = total.toFixed(2);
+							document.getElementById("SnH").value = ("$" +SnH);
+							document.getElementById("tax").value = ("$" +tax);
+							document.getElementById("total").value = ("$" +total);
+						}
+						
+						else if(iPrice < 50)
+						{	SnH = 12;
+							subTotal = iPrice + SnH;
+							tax = subTotal * paTax;
+							total = subTotal + tax;
+							SnH = SnH.toFixed(2);
+							tax = tax.toFixed(2);
+							total = total.toFixed(2);
+							document.getElementById("SnH").value = ("$" +SnH);
+							document.getElementById("tax").value = ("$" +tax);
+							document.getElementById("total").value = ("$" +total);
+						}
+						
+						else
+						{	SnH = 15.25;
+							subTotal = iPrice + SnH;
+							tax = subTotal * paTax;
+							total = subTotal + tax;
+							SnH = SnH.toFixed(2);
+							tax = tax.toFixed(2);
+							total = total.toFixed(2);
+							document.getElementById("SnH").value = ("$" +SnH);
+							document.getElementById("tax").value = ("$" +tax);
+							document.getElementById("total").value = ("$" +total);
+						}
+					}
+					
+					else	//Error message if no shipping method selected
+						window.alert("Please check Standard or Expedited shipping");
+				}
+			}
+			
+			function formSubmit()
+			{	var iPrice = document.getElementById("iPrice").value;
+				var SnH = document.getElementById("SnH").value;
+				var tax = document.getElementById("tax").value;
+				var total = document.getElementById("total").value;
+				iPrice = (parseFloat(iPrice)).toFixed(2);
+				SnH = (parseFloat(SnH)).toFixed(2);
+				tax = (parseFloat(tax)).toFixed(2);
+				total = (parseFloat(total)).toFixed(2);
+				document.writeln("Item Price: $" +iPrice);
+				document.writeln("<br/>S&H Charges: $" +SnH);
+				document.writeln("<br/>Tax: $" +tax);
+				document.writeln("<br/>Total: $" +total);
+				return true;
+			}
+				
+		// -->
+	</script>
+      
+   </head>
+   <body>
+	<form onsubmit = "formSubmit()">
+		<p><label>Item Price: <!-- User input -->
+			<input id = "iPrice" name = "iPrice" type = "text" size = "25"/>
+		</label></p>
+		
+		<p>Shipment method:</p>
+		<!-- Radio buttons for shipping method -->
+		<input id = "shipMS" name = "shipMethod" type = "radio" value = "Standard"/>
+		<label>Standard</label>
+	
+		<input id = "shipME" name = "shipMethod" type = "radio" value = "Expedited"/>
+		<label>Expedited</label>
+		
+		<p><label>S&H Charges:	<!-- Displays S&H Charges -->
+			<input id = "SnH" name = "SnH" type = "text" size = "25" readOnly />
+		</label></p>
+		
+		<p><label>Tax (@6.00%): <!-- Displays tax -->
+			<input id = "tax" name = "tax" type = "text" size = "25" readOnly />
+		</label></p>
+	
+		<p><label>Total Price: <!-- Displays total price -->
+			<input id = "total" name = "total" type = "text" size = "25" readOnly />
+		</label></p>
+	
+		<p>
+			<input type = "button" value = "Calculate" onClick = "calc()"/>
+		</p>
+	
+		<p>
+			<input type = "submit" value = "Submit"/>
+			<input type = "reset" value = "Clear"/>
+		</p>
+	</form>
+   </body>
+</html>

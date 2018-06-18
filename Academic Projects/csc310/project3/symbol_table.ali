@@ -1,0 +1,151 @@
+V "GNAT Lib v4.4"
+P SS ZX
+R nnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnvnnnnnnvnnvnnnnnnnnnnnnnvnnnnvnnnnnnnnnnnnnnnn
+
+U symbol_table%b	symbol_table.adb	7a12c585 NE OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.ordered_maps%s
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W lex%s			lex.adb			lex.ali
+
+U symbol_table%s	symbol_table.ads	8636b86f EE OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.ordered_maps%s
+W ada.containers.red_black_trees%s  a-crbltr.ads  a-crbltr.ali
+W ada.containers.red_black_trees.generic_keys%s
+W ada.containers.red_black_trees.generic_operations%s
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W ada.finalization.list_controller%s  a-filico.adb  a-filico.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.unchecked_deallocation%s
+W system%s		system.ads		system.ali
+W system.finalization_implementation%s  s-finimp.adb  s-finimp.ali
+W system.finalization_root%s  s-finroo.adb	s-finroo.ali
+W system.parameters%s	s-parame.adb		s-parame.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+W system.strings.stream_ops%s  s-ststop.adb	s-ststop.ali
+
+D ada.ads		20090114110545 9c7dd3ea
+D a-charac.ads		20090114110546 506ce725
+D a-chlat1.ads		20090114110546 e9ee6d0a
+D a-contai.ads		20090114110545 7b35f559
+D a-coorma.ads		20090414134544 ddd4d70c
+D a-coorma.adb		20090414134543 e1e1c6f9
+D a-crbltr.ads		20090414134920 3ec6743e
+D a-crbtgk.ads		20090414134415 e77097a1
+D a-crbtgk.adb		20090414134412 0ddb08bf
+D a-crbtgo.ads		20090414134608 04139e9a
+D a-crbtgo.adb		20090414134605 998da4ee
+D a-convec.ads		20090414134727 317e4a8c
+D a-except.ads		20090414134449 b54b55de
+D a-finali.ads		20090414134820 9eaacebd
+D a-filico.ads		20090414134951 9299732a
+D a-inteio.ads		20090114110546 03bc737c
+D a-ioexce.ads		20090114110546 be0900a0
+D a-stream.ads		20090414134419 34aca5be
+D a-string.ads		20090114110545 87b4230b
+D a-strmap.ads		20090414135051 5253a637
+D a-strunb.ads		20090414135011 f0549c04
+D a-tags.ads		20090414134730 bfa07446
+D a-textio.ads		20090414134822 fe8af46e
+D a-tiinio.ads		20090414134653 949a7272
+D a-unccon.ads		20090114110545 51e09df2
+D a-uncdea.ads		20090114110545 dc667e6d
+D class_io.ads		20150501060650 589ac1c6
+D interfac.ads		20090414134625 a69cad5c
+D i-cstrea.ads		20090414134744 e1e064a9
+D lex.ads		20150501051428 3a4ed21d
+D lex_list.ads		20150501073133 02c6dc47
+D lexemes.ads		20150501052413 6fe3f9e0
+D symbol_table.ads	20150501054613 abb6f367
+D symbol_table.adb	20150501073303 3b5c28e5
+D system.ads		20090414134649 df55302f
+D s-crtl.ads		20090414134633 997234a1
+D s-exctab.ads		20090414134921 5c1c61ae
+D s-ficobl.ads		20090414134918 8bb681e5
+D s-finimp.ads		20090414135057 9449f4cb
+D s-finroo.ads		20090414134701 1408f9d1
+D s-parame.ads		20090414134647 f32e56e9
+D s-secsta.ads		20090414134519 7bae3621
+D s-soflin.ads		20090414134425 0c6fd39d
+D s-stache.ads		20090414134825 257b3be8
+D s-stalib.ads		20090414135007 52b793d5
+D s-stoele.ads		20090414134841 ed966df3
+D s-stoele.adb		20090414134835 e9998c78
+D s-stratt.ads		20090414134859 fef7c1da
+D s-string.ads		20090414134511 04f2ee70
+D s-ststop.ads		20090414135037 b2197cc3
+D s-traent.ads		20090414134453 bd5f2753
+D s-unstyp.ads		20090414134601 c0f9fae5
+D s-wchcon.ads		20090414134706 ab028799
+X 1 ada.ads
+16K9*Ada 19e8 33|16r6 17r6 17r45 23r30 34|15r6 15r45 16r6 16r45 17r6 18r6
+. 18r45
+X 4 a-contai.ads
+16K13*Containers 22e19 33|16r10 23r34 34|17r10
+X 5 a-coorma.ads
+45k24*Ordered_Maps 259e32 33|16w21 23r45 34|17w21
+51R9*Map 33|28r38[23] 32r39[23] 35r61[23] 34|28r38[33|23] 44r39[33|23] 77r61[33|23]
+54R9*Cursor 34|45r33[33|23] 80r25[33|23]
+65V13*Is_Empty{boolean} 34|51r20[33|23] 86r28[33|23]
+69V13*Key{21|42R9} 34|58r39[33|23] 95r47[33|23]
+71V13*Element{integer} 34|59r44[33|23] 94r52[33|23]
+129V13*First{54R9[33|23]} 34|55r36[33|23] 92r44[33|23]
+141V13*Next{54R9[33|23]} 34|64r44[33|23] 99r52[33|23]
+157V13*Contains{boolean} 34|31r21[33|23]
+159V13*Has_Element{boolean} 34|57r32[33|23] 93r40[33|23]
+X 16 a-inteio.ads
+18K13*Integer_Text_IO[24|45] 34|16w10 16r49
+X 19 a-string.ads
+16K13*Strings 35e16 33|17r10 17r49 34|18r10 18r49
+X 21 a-strunb.ads
+39K21*Unbounded 428e26 33|17w18 17r57 34|18w18 18r57
+42R9*Unbounded_String 395e14 33|23r58 28r52 34|28r52 47r27 82r19
+63V13*To_String{string} 34|60r37 96r54
+X 23 a-textio.ads
+48K13*Text_IO 506e16 34|15w10 15r49
+51P9*File_Type(369R9) 34|79r19
+165U14*New_Line 34|98r41
+166U14*New_Line 34|62r33
+241U14*Put 34|96r41
+242U14*Put 34|60r33
+X 24 a-tiinio.ads
+59U14*Put 34|97r41[16|18]
+65U14*Put 34|61r33[16|18]
+X 30 lex.ads
+24K9*lex 52e8 34|19w6 19r45
+28V18*checkFile{boolean} 34|85r24
+36U19*createFile 34|89r33
+X 33 symbol_table.ads
+18K9*symbol_table 37l5 37e17 34|20b14 108l5 108t17
+23K17*table[5|45] 25r13 34|45r27 80r19
+28V18*checkTable{boolean} 28>29 28>43 34|28b18 36l13 36t23
+28r29 sMap{5|51R9[23]} 34|28b29 31r30
+28r43 iStr{21|42R9} 34|28b43 31r36
+32U19*printTable 32>30 34|44b19 67l13 67t23
+32r30 sMap{5|51R9[23]} 34|44b30 51r29 55r42
+35V18*writeSymbolFile{boolean} 35>34 35>52 34|77b18 106l13 106t28
+35s34 fname{string} 34|77b34 85r34 89r53
+35r52 sMap{5|51R9[23]} 34|77b52 86r37 92r50
+X 34 symbol_table.adb
+45r9 sCursor{5|54R9[33|23]} 55m25 57r44 58r43 59r52 64m33 64r49
+46i9 lineNum{positive} 59m33 61r37
+47r9 id{21|42R9} 58m33 60r47
+79p9 outFile{23|51P9} 89m44 96r45 97r45 98r50
+80r9 sCursor{5|54R9[33|23]} 92m33 93r52 94r60 95r51 99m41 99r57
+81i9 lineNum{positive} 94m41 97r54
+82r9 id{21|42R9} 95m41 96r64
+

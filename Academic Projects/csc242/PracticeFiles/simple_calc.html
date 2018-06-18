@@ -1,0 +1,99 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!--
+     Name:         Christian Carreras
+-->
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+   <head>
+      <title>     Basic Calculator        </title>
+        <script style = "text/javascript">
+			<!--
+			var answer;
+			var num1;
+			var num2;
+			var sum;
+			var difference;
+			var product;
+			var quotient;
+			answer = window.prompt("Enter (A)dd, (S)ubtract, (M)ultiply, (D)ivide");
+			switch(answer)
+			{
+			case 'A':
+				sum = add(num1, num2);
+				document.writeln("The sum is " +sum);
+				break;
+			case 'S':
+				difference = subract(num1, num2);
+				document.writeln("The difference is " +difference);
+				break;
+			case 'M':
+				product = multiply(num1, num2);
+				document.writeln("The product is " +product);
+				break;
+			case 'D':
+				quotient = divide(num1, num2);
+				document.writeln("The quotient is " +quotient);
+				break;
+			default:
+				window.alert("Invalid Entry");
+				break;
+			}
+			
+			///////////////
+			// Functions
+			///////////////
+			
+			function add(num1, num2)
+			{	var sum;
+				num1 = window.prompt("Please enter the first number");
+				num2 = window.prompt("Please enter the second number to add");
+				num1 = parseInt(num1);
+				num2 = parseInt(num2);
+				sum = num1 + num2;
+				return sum;		
+			}
+			
+			function subtract(num1, num2)
+			{	var diff;
+				num1 = window.prompt("Please enter the first number");
+				num2 = window.prompt("Please enter the second number to subtract");
+				num1 = parseInt(num1);
+				num2 = parseInt(num2);
+				diff = num1 - num2;
+				return diff;	
+			}
+			
+			function multiply(num1, num2)
+			{	var prod;
+				num1 = window.prompt("Please enter the first number");
+				num2 = window.prompt("Please enter the second number to multiply");
+				num1 = parseInt(num1);
+				num2 = parseInt(num2);
+				prod = num1 * num2;
+				return prod;	
+			}
+			
+			function divide(num1, num2)
+			{	var quo;
+				num1 = window.prompt("Please enter the first number");
+				num2 = window.prompt("Please enter the second number to divide");
+				num1 = parseFloat(num1);
+				num2 = parseFloat(num2);
+				quo = num1 / num2;
+				return quo;
+			}
+			// -->
+		</script>
+   </head>
+   <body>
+        <form>
+			<p><label>First Name:
+				<input name = "Fname" type = "text" size = "25"/>
+				</label>
+			</p>
+		</form>
+   </body>
+</html>

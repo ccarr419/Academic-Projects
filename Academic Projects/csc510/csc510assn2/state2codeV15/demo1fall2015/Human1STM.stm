@@ -1,0 +1,77 @@
+# CSC 343, Fall 2015, Initial demo of State Machine .stm syntax & semantics.
+
+machine processor {
+    # Use this machine in all of your files in assignments to start threads.
+    # This one starts one thread active object.
+    threadsToGo = 1, tid = -1, pid = -1 ;
+    start init, state makingThreads, accept doneStartingThreads ;
+    init -> makingThreads init()[]/@
+        threadsToGo -= 1 ; fork()@
+    makingThreads -> makingThreads fork(pid, tid)[@threadsToGo > 0@]/@
+        threadsToGo -= 1 ; fork()@
+    makingThreads -> doneStartingThreads fork(pid, tid)[@threadsToGo == 0@]/
+}
+
+# For most parts of your assignments, you will complete code for thread
+# active objects. An "active object" is an object that runs in its own
+# thread of control (i.e., its own instruction stream). Each STM machine
+# is a class, and each object of each object of each such STM class is an
+# "active object."
+# NOTE That a comments must be a *complete line* starting with a '#'.
+machine thread {
+    # Here we initialize some state variables. Each variable persists
+    # throughout the duration of its STM object. You can also assign
+    # into new STM state variables within actions, but it is nice to 
+    # document their existence here by initializing them.
+    # The following simulation uses a tock to simulate an hour of sleep.
+    # Later it will also simulate an hour of waking using the cpu(ticks).
+    hoursInDay = 24, daysInYear = 365, yearsToSleep = 10,
+        hoursInYear = 0, hoursToSleep = 0 ;
+        # To initialize variables using expression, do it in init -> ...
+    start init, state infant, state teen, state youngAdult,
+        state midLife, state gettingOld, accept deadInTheWater ;
+    init -> infant init()[]/@
+        hoursInYear = hoursInDay * daysInYear ;
+        hoursToSleep = hoursInYear * yearsToSleep;
+        sleep(hoursInYear * 3)@
+
+    infant -> infant sleep()[@(time() / hoursInYear) < 13@]/@
+        msg("infant years " + str(time() / hoursInYear) + ", sleep some more.");
+        sleep(hoursToSleep)@
+    infant -> teen sleep()[@(time() / hoursInYear) >= 13@]/@
+        msg("infant years " + str(time() / hoursInYear) + ", growing up.");
+        sleep(0)@
+
+    teen -> teen sleep()[@(time() / hoursInYear) < 20@]/@
+        msg("teen years " + str(time() / hoursInYear) + ", sleep some more.");
+        sleep(hoursToSleep)@
+    teen -> youngAdult sleep()[@(time() / hoursInYear) >= 20@]/@
+        msg("teen->youngAdult years " + str(time() / hoursInYear) + ", growing up.");
+        sleep(0)@
+
+    youngAdult -> youngAdult sleep()[@(time() / hoursInYear) < 35@]/@
+        msg("youngAdult years " + str(time() / hoursInYear)
+            + ", sleep some more.");
+        sleep(hoursToSleep)@
+    youngAdult -> midLife sleep()[@(time() / hoursInYear) >= 35@]/@
+        msg("youngAdult years " + str(time() / hoursInYear)
+            + ", growing up.");
+        sleep(0)@
+
+    midLife -> midLife sleep()[@(time() / hoursInYear) < 50@]/@
+        msg("midLife years " + str(time() / hoursInYear)
+            + ", sleep some more.");
+        sleep(hoursToSleep)@
+    midLife -> gettingOld sleep()[@(time() / hoursInYear) >= 50@]/@
+        msg("midLife years " + str(time() / hoursInYear) + ", growing up.");
+        sleep(0)@
+
+    gettingOld -> gettingOld sleep()[@(time() / hoursInYear) < 90@]/@
+        msg("gettingOld years " + str(time() / hoursInYear)
+            + ", sleep some more.");
+        sleep(hoursToSleep)@
+    gettingOld -> deadInTheWater sleep()[@(time() / hoursInYear) >= 90@]/@
+        msg("gettingOld years " + str(time() / hoursInYear) + ", done.")@
+}
+
+processor

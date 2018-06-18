@@ -1,0 +1,81 @@
+# D. Parson, elmu2013_ai.txt is input for State2CodeParser.py
+# to be used in electro-music 2013 Acoustic Interloper set.
+
+# From st2013ctrl.ck:
+# For this prototype the following outgoing controllers are defined:
+# 1. The summer 1-5 strip IN vs. OFF
+# 2. DOWN GRAIN in that strip
+# 3. Atmosphazer in that strip
+# 4. High-end modulators in that strip
+# 5. External audio effect (pacarana) in that strip
+# 6. The GR-33 strip.
+# 7. The Glasses MIDI synth strip
+# All of the above are turned ON == 0, and OFF == 127!
+# The START (State silent0) assumes that all strips are disabled.
+# State theme1 is default with FX 1, 2, 6, 7 enabled (the starting low end).
+# State middle2 disables 2, enables 3. (Mid-range intervals on middle strings.)
+# State himelody3 disables 2-5.    (Hi end melody)
+# State highestmelody4 disables 2-7.    (Highest end melody)
+# State doublemelody5 enables 4, 6, 7. (Doubled melody, same notes on 2 strings)
+# State chordal6 disables 2-7.    (Chrodal section)
+# State theme7 repeats default with FX 1, 2, 6, 7 enabled
+#           (the starting low end).
+# State lastnotes8 disables 2-7.    (Finale)
+
+machine ai2013 {
+    start silent0, state theme1, state middle2, state himelody3,
+    state highestmelody4, state doublemelody5, state chordal6,
+    state theme7, accept lastnotes8 ;
+
+    silent0 -> theme1 midi()
+        [@msgin.data1==176 && msgin.data2==1 && msgin.data3==0@]
+        / @1=>msgout.data2;emit(msgout);2=>msgout.data2;emit(msgout);
+            6=>msgout.data2;emit(msgout);7=>msgout.data2;emit(msgout)@;
+
+    # State theme1 -> middle2 (State middle2 disables 2, enables 3.)
+    theme1 -> middle2 midi()
+        [@msgin.data1==176 && msgin.data2==1 && msgin.data3==0@]
+        / @2=>msgout.data2;127=>msgout.data3;emit(msgout);
+            3=>msgout.data2;0=>msgout.data3;emit(msgout)@;
+
+    # State middle2 -> himelody3 (State himelody3 disables 2-5.)
+    middle2 -> himelody3 midi()
+        [@msgin.data1==176 && msgin.data2==1 && msgin.data3==0@]
+        / @2=>msgout.data2;127=>msgout.data3;emit(msgout);
+            3=>msgout.data2;emit(msgout);4=>msgout.data2;emit(msgout);
+            5=>msgout.data2;emit(msgout)@;
+
+    # Disables 2-7, really only 1 is on.
+    himelody3 -> highestmelody4 midi()
+        [@msgin.data1==176 && msgin.data2==1 && msgin.data3==0@]
+        / @6=>msgout.data2;127=>msgout.data3;emit(msgout);
+            7=>msgout.data2;emit(msgout)@;
+
+    # Enable 4, 6, 7
+    highestmelody4 -> doublemelody5 midi()
+        [@msgin.data1==176 && msgin.data2==1 && msgin.data3==0@]
+        / @4=>msgout.data2;emit(msgout);
+            6=>msgout.data2;emit(msgout);7=>msgout.data2;emit(msgout)@;
+
+    # Disables 2-7, 4, 5 & 7 are enough to disable..
+    doublemelody5 -> chordal6 midi()
+        [@msgin.data1==176 && msgin.data2==1 && msgin.data3==0@]
+        / @4=>msgout.data2;127=>msgout.data3;emit(msgout);
+            6=>msgout.data2;emit(msgout);7=>msgout.data2;emit(msgout)@;
+
+    # Set up same as theme1.
+    chordal6 -> theme7 midi()
+        [@msgin.data1==176 && msgin.data2==1 && msgin.data3==0@]
+        / @1=>msgout.data2;emit(msgout);2=>msgout.data2;emit(msgout);
+            6=>msgout.data2;emit(msgout);7=>msgout.data2;emit(msgout)@;
+
+    # Disables 2-7.
+    theme7 -> lastnotes8 midi()
+        [@msgin.data1==176 && msgin.data2==1 && msgin.data3==0@]
+        / @2=>msgout.data2;127=>msgout.data3;emit(msgout);
+            3=>msgout.data2;emit(msgout);4=>msgout.data2;emit(msgout);
+            5=>msgout.data2;emit(msgout);6=>msgout.data2;emit(msgout);
+            7=>msgout.data2;emit(msgout);@;
+}
+
+ai2013

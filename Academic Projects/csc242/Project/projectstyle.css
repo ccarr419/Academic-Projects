@@ -1,0 +1,36 @@
+/*
+	Name:         	Christian Carreras
+	Project: 	Designing Web Page
+	Purpose:	Book store website
+	URL:         	http://unixweb.kutztown.edu/~ccarr419/projectstyle.css
+	Course:      	CSC 242 - Fall 2013
+*/
+
+
+/*Create page with same style sheet and links as rest of website*/
+html { 
+
+  background-color: #151515;
+  background-size: cover;
+}
+
+.header{font-family: Verdana, serif; text-align: center; color: white}
+
+/*Standard attributes for text*/
+.special{font-family: Verdana, serif; text-align: center; color: black}
+
+/*Standard attributes for links*/
+.link{text-decoration: none; color: black}
+
+.link2{text-decoration: none; color: white}
+
+/*Attribute for hovering over a link*/
+a:hover {text-decoration: underline}
+
+/*Paragraph blocks*/
+p.one {margin: 0.2in; padding: 0.2in; background-color: #aaaaaa; border-style: solid;}
+	
+
+
+
+	

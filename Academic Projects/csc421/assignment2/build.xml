@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<project name="Yahtzee" default="dist" basedir=".">
+    <description>
+        Build file for Assignment #2
+        CSC421 Web-Based Soft Des. &amp; Dev.
+        Created by Christian Carreras
+    </description>
+    <property name="src" location="yahtzee"/>
+    <property name="build" location="build"/>
+    <property name="dist" location="dist"/>
+    
+    <target name="init">
+        <!-- Create the time stamp -->
+        <tstamp/>
+        <!-- Create the build directory structure used by compile -->
+        <mkdir dir="${build}"/>
+    </target>
+    
+    <target name="compile" depends="init"
+        description="compile the source">
+        <!-- Compile the java code from ${src} into ${build} -->
+        <javac srcdir="${basedir}" destdir="${build}"/>
+        <javac srcdir="${src}" destdir="${build}"/>
+    </target>
+    
+    <target name="dist" depends="compile"
+        description="generate the distribution">
+        <!-- Create the distribution directory -->
+        <mkdir dir="${dist}/lib"/>
+        
+        <copy file="README.txt" todir="${dist}/lib/"/>
+        <copy file="CATEGORIES.txt" todir="${dist}/lib/"/>
+        <copy file="SCORESHEET.txt" todir="${dist}/lib/"/>
+        <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
+        <jar destfile="${dist}/lib/Yahtzee-${DSTAMP}.jar">
+            <fileset dir="${build}"/>
+            <manifest>
+                <attribute name="Main-Class" value="Yahtzee"/>
+            </manifest>
+        </jar>
+    </target>
+    
+    <target name="clean"
+        description="clean up">
+        <!-- Delete the ${build} and ${dist} directory trees -->
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+    </target>
+</project>

@@ -1,0 +1,15 @@
+# D. Parson, testmachine.txt is test input for State2CodeParser.py
+
+machine testmidi {
+    a = 1, b = 2.3 ;
+    start s1, state s2, accept s3 ;
+    s1 -> s2 midi(midipattern)[@msgin.data1==176@]/@176=>msgout.data1;emit(msgout)@;
+    s2 -> s3 midi()[@1@]/;
+    s1 -> s3 midi(mp2)[@1@]/@0=>msgout.data1@;
+    s1 -> s1 midi(vol)[@0@]/;
+    s2 -> s2 midi(vol)[@msgin.data1>100@]/@msgin.data1+2=>msgout.data1;
+        emit(msgout)@;
+    s3 -> s3 midi(vol)[@2@]/@1=>msgout.data1@;
+}
+
+testmidi

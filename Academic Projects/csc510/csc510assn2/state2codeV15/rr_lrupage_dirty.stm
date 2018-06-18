@@ -1,0 +1,287 @@
+# CSC 343, Fall 2013, STUDENT NAME:
+# rr_lrupage_dirty implements a preemptive round-robin CPU scheduler
+# and a LRU page replacement algorithm with per-process *proportional
+# allocation* (in contrast to *equal allocation*) and *local frame
+# replacement* (in contrast to *global frame replacement*) to keep
+# the simulation somewhat simpler. We are comparing FIFO, LRU, and
+# (rr_lrupage_dirty) LRU with major priority for non-dirty pages,
+# within the framework of *proportional allocation* and *local frame
+# replacement*.
+
+machine processor {
+    # Use this machine in all of your files in assignment 3 to start processes.
+    # It starts 10 processes, one every tick. Each process starts life with
+    # thread 0, and that thread spawns 4 additional threads and initializes
+    # some variables. Thread 0 manages the frame recovery algorithm.
+    threadsToGo = 10, tid = -1, pid = -1 ;
+    start init, state makingThreads, accept doneMakingThreads ;
+    init -> makingThreads init()[]/@
+        processor.readyq = Queue(ispriority=False);
+        threadsToGo -= 1 ; fork()@
+    makingThreads -> makingThreads fork(pid, tid)[@threadsToGo > 0@]/@
+        threadsToGo -= 1 ; fork()@
+    makingThreads -> doneMakingThreads fork(pid, tid)[@threadsToGo == 0@]/
+}
+
+# This assignment uses round-robin CPU scheduling with 50% IO-bound and
+# 50% CPU-bound threads as in assignment 2. Also, 50% of the threads
+# have high (good) locality for memory references, and half have low
+# (poor) locality.
+machine thread {
+    quantum = 125, machineid = -1, pid = -1, tid = -1, iobound = @False@,
+        islocal = @False@, endtime = 100000, addressBitsInPage = 10,
+        minFreeFrames = 1, cpuburst = -1, tickstorun = -1, tickstodefer = -1,
+        iodevice = -2, threadsToStart = -1, f = @None@, p = @None@,
+        memoryLocation = -1, virtualMemorySize = -1, pageNumber = -1,
+        ticksUntilMemory = -1, iswrite = 0, ticksForMemoryInstruction = -1,
+        oldpage = -1, freeframe = -1, waitthread = @None@, waitpage = -1 ;
+    # islocal is True if the thread shows good locality of reference.
+    # 2^addressBitsInPage gives the number of addresses within a page,
+    # for example 2^10 = 1024 = 1K page size in this simulation.
+    start init, state postinit, state pcbinit,
+        state pagingWait, state pagingIn, state pagingOut,
+        state scheduling, state ready,
+        state running_cpu, state running_memory,
+        state waiting_paging, state waiting_io,
+        state rescheduling, accept terminated ;
+    # Take a victim out of victim queue & re-insert at back of victim queue.
+    macro reinsertInVictimQueue @
+        # Each memory reference updates victimQueue in LRU
+        pcb.victimQueue.delete(pcb.pagetable[pageNumber][2])
+            if pcb.pagetable[pageNumber][2] else noop();
+        pcb.pagetable[pageNumber][2] = pcb.victimQueue.enq(pageNumber,
+            pcb.pagetable[pageNumber][1]);
+        # ^^^ Remove MRU from victimQueue, reinsert at priority position.
+        @
+    # Initialize variables used by all threads:
+    init -> postinit init()[]/@machineid, pid, tid = getid();
+        iobound = True if ((pid % 2) == 1) else False ;
+        # ^^^ The odd pids are IO bound. The others (50%) are CPU bound.
+        islocal = True if ((tid % 2) == 1) else False ;
+        # ^^^ The odd thread ids have the good locality.
+        pagesize = 1 << addressBitsInPage ;
+        pagemask = pagesize - 1 ;
+        pagingDisk = len(processor.fastio) - 1;
+        yieldcpu()@
+    # START OF STATES LIMITED TO THREAD 0, WHICH IS pcb.pager
+    postinit -> pcbinit yieldcpu()[@tid == 0@]/@
+        # Thread 0 sets up the PROCESS CONTROL BLOCK (PCB),
+        # then spawns application threads, then manages page recovery
+        # in its own cycle of the state machine graph.
+        # All threads in a process share access to a single PCB.
+        pcb.pagecount = sample(10, 100, 'uniform');
+        pcb.framecount = int(pcb.pagecount / 4);
+        # STUDENT: The entry that goes into each pagetable element
+        # is up to you. For rr_lrupage I am storing the following
+        # fields at each entry, where "entry" is a pagetable element:
+        # entry[0] gets a non-negative frame number, or -1 if this
+        #   page has not yet been allocated a frame or is is paged out
+        # entry[1] starts as a 0 when the page is first read into a
+        #   frame, is set to 1 whenever a thread writes into the page;
+        #   it is the "dirty bit". It determines whether the frame
+        #   must be written to disk when the frame is reused.
+        # entry[2] is the current handle into the pcb.victimQueue
+        #   for this page entry (as returned by Queue.enq()), or None
+        #   when the frame held by this page is not Queued as a
+        #   candidate for recovery (reuse). None is Python's NULL.
+        # All of our pages are read/write; there are no permission bits.
+        # STUDENT may add other fields.
+        pcb.pagetable = [[-1, 0, None]
+            for p in range(0, pcb.pagecount)];
+        # pcb.freeframeQueue Queue maintains the frames that are free for
+        # allocation without borrowing, it may be empty at times.
+        pcb.freeframeQueue = Queue(ispriority=False);
+        for f in range(0, pcb.framecount): pcb.freeframeQueue.enq(f);
+        # ^^^ Each entry is the frame number of a free frame.
+        pcb.victimQueue = Queue(ispriority=True);
+        # ^^^ victimQueue is the priority Q of in-use pages for LRU page
+        # replacement, with priority based first on whether the page is
+        # dirty (non-dirty sorts to the front), and then LRU order
+        # of arrival (FIFO reordering upon usage re-insertion).
+        # Each entry is a page number, i.e., an index into pagetable.
+        pcb.waitingForFrameQueue = Queue(ispriority=False);
+        # ^^^ These are the (thread, page) pairs waiting for a frame.
+        pcb.pager = thread;
+        # ^^^ Other threads make frameRequests to this thread.
+        threadsToStart = 4;
+        yieldcpu()@
+    pcbinit -> pcbinit yieldcpu()[@threadsToStart > 0@]/@
+        threadsToStart -= 1;
+        spawn();
+        yieldcpu()@
+    pcbinit -> pagingWait yieldcpu()[@threadsToStart == 0@]/@
+        waitForEvent('frameRequest', False)
+                if len(pcb.freeframeQueue) >= minFreeFrames
+            else trigger(0, 'frameRequest')@
+        # If the threads that we just started have already exhausted
+        # the free frame pool, trigger to recover some free frames.
+    pagingWait -> pagingWait frameRequest()[@
+            len(pcb.waitingForFrameQueue) > 0
+              and pcb.pagetable[
+                pcb.waitingForFrameQueue.peek()[1]][0] >= 0@]/@
+        # Waited-for page was paged in by an earlier waiting thread.
+        waitthread, waitpage = pcb.waitingForFrameQueue.deq();
+        signalEvent(waitthread, 'frameReady');
+        waitForEvent('frameRequest', False)@
+    pagingWait -> pagingOut frameRequest()[@
+            pcb.pagetable[pcb.victimQueue.peek()][1] != 0@]/@
+        # The dirty flag is set, so this page must be flushed.
+        oldpage = pcb.victimQueue.deq();
+        freeframe = pcb.pagetable[oldpage][0];
+        # Marked old page table entry as "paged out."
+        pcb.pagetable[oldpage][0] = -1 ;
+        pcb.pagetable[oldpage][1] = 0 ;
+        pcb.pagetable[oldpage][2] = None ;
+        # ^^^ mark pagetable entry as unmapped, then flush frame to disk
+        # VVV io() call writes dirty page to pagingDisk.
+        io(pagingDisk)@
+    pagingWait -> pagingIn frameRequest()[@
+            pcb.pagetable[pcb.victimQueue.peek()][1] == 0@]/@
+        # Dirty flag not set, read in frame for blocked thread.
+        oldpage = pcb.victimQueue.deq();
+        freeframe = pcb.pagetable[oldpage][0];
+        # Marked old page table entry as "paged out."
+        pcb.pagetable[oldpage][0] = -1 ;
+        pcb.pagetable[oldpage][1] = 0 ;
+        pcb.pagetable[oldpage][2] = None ;
+        # ^^^ mark pagetable entry as unmapped.
+        # VVV io() call reads demanded page from pagingDisk.
+        io(pagingDisk)@
+    pagingOut -> pagingIn io()[]/@
+        # Writing is done, read in frame for blocked thread.
+        # VVV io() call reads demanded page from pagingDisk.
+        io(pagingDisk)@
+    pagingIn -> pagingWait io()[@len(pcb.waitingForFrameQueue) > 0@]/@
+        # Requested page is now in, update data & resume wait.
+        # There is a thread waiting for this page.
+        waitthread, waitpage = pcb.waitingForFrameQueue.deq();
+        pcb.pagetable[waitpage][0] = freeframe ;
+        pcb.pagetable[waitpage][1] = 0 ;
+        pcb.pagetable[waitpage][2] = None ;
+        # The receiving thread updates pcb.victimQueue
+        # and pcb.pagetable[waitpage][2] after a successful
+        # pagingIn.
+        signalEvent(waitthread, 'frameReady');
+        waitForEvent('frameRequest', False)
+                if len(pcb.freeframeQueue) >= minFreeFrames
+            else trigger(0, 'frameRequest')@
+        # If the frame we just allocated has exhausted the
+        # pool, trigger to recover some free frames.
+    pagingIn -> pagingWait io()[@len(pcb.waitingForFrameQueue) == 0@]/@
+        # Requested page is now in, update data & resume wait.
+        # There is NO thread waiting for this page.
+        pcb.freeframeQueue.enq(freeframe);
+        waitForEvent('frameRequest', False)
+                if len(pcb.freeframeQueue) >= minFreeFrames
+            else trigger(0, 'frameRequest')@
+    # END OF STATES LIMITED TO THREAD 0, WHICH IS pcb.pager
+    postinit -> scheduling yieldcpu()[@tid != 0@]/@
+        cpuburst = sample(1, 250, 'exponential', 25) if iobound
+            else sample(100, 1100, 'revexponential', 1000);
+        tickstorun = min(cpuburst, quantum);
+        tickstodefer = cpuburst - tickstorun;
+        yieldcpu()@
+    scheduling -> terminated yieldcpu()[@time() >= endtime@]/
+    scheduling -> ready yieldcpu()[@processor.contextsFree == 0@]/@
+        # Put myself in processor's readyq with rr priority.
+        processor.readyq.enq(thread); waitForEvent('contextReady', False)@
+    ready -> scheduling contextReady()[]/@yieldcpu()@
+        # ^^^ Do not set ticks; they have not all been used.
+    scheduling -> running_cpu yieldcpu()[@processor.contextsFree > 0@]/@
+        processor.contextsFree -= 1 ;
+        ticksUntilMemory = sample(1, tickstorun, 'uniform')
+            if (tickstorun > 1) else tickstorun ;
+        tickstorun = tickstorun - ticksUntilMemory;
+        iswrite = sample(0, 1, 'uniform');
+        virtualMemorySize = pcb.pagecount * pagesize ;
+        memoryLocation = sample(0, virtualMemorySize - 1,
+                'gaussian', virtualMemorySize / 2, pagesize * 2)
+            if islocal else
+                sample(0, virtualMemorySize - 1, 'uniform');
+        # Don't let every thread's mem refs pile up together:
+        memoryLocation = (memoryLocation + tid * pagesize * 2)
+            % virtualMemorySize;
+        pageNumber = memoryLocation >> addressBitsInPage ;
+        cpu(ticksUntilMemory)@
+    running_cpu -> running_memory cpu()[]/@
+        ticksForMemoryInstruction = min(tickstorun, 4);
+        # It is possible for an uninterruptible instruction
+        # to over-run the quantum. Use 4 ticks for memory.
+        tickstorun -= (ticksForMemoryInstruction
+            if (tickstorun >= ticksForMemoryInstruction) else 0);
+        cpu(4)@
+    running_memory -> running_cpu cpu()[@
+            pcb.pagetable[pageNumber][0] > -1 and tickstorun > 0@]/@
+        pcb.pagetable[pageNumber][1]
+            = 1 if iswrite else pcb.pagetable[pageNumber][1];
+            # ^^^ Mark dirty bit if this is a write.
+        reinsertInVictimQueue ;
+        cpu(0)@
+    running_memory -> waiting_paging cpu()[@
+            pcb.pagetable[pageNumber][0] < 0
+                and len(pcb.freeframeQueue) < 1@]/@
+        # Page is not mapped to frame, request then wait.
+        pcb.waitingForFrameQueue.enq((thread, pageNumber));
+        signalEvent(pcb.pager, 'frameRequest');
+        processor.contextsFree += 1 ;
+        signalEvent(processor.readyq.deq(), 'contextReady')
+            if len(processor.readyq) > 0 else noop();
+        waitForEvent('frameReady', False)@
+    running_memory -> running_memory cpu()[@
+            pcb.pagetable[pageNumber][0] < 0
+                and len(pcb.freeframeQueue) > 0@]/@
+        # Page is not mapped to frame, take a free frame.
+        pcb.pagetable[pageNumber][0] = pcb.freeframeQueue.deq();
+        pcb.pagetable[pageNumber][1] = 1 if iswrite else 0 ;
+        pcb.pagetable[pageNumber][2] = pcb.victimQueue.enq(pageNumber,
+            pcb.pagetable[pageNumber][1]);
+        cpu(0)@
+    waiting_paging -> scheduling frameReady()[]/@
+        # Thread 0 has put the frame into pcb.pagetable[pageNumber][0]
+        pcb.pagetable[pageNumber][1] = 1 if iswrite else 0 ;
+        pcb.pagetable[pageNumber][2] = pcb.victimQueue.enq(pageNumber,
+            pcb.pagetable[pageNumber][1]);
+        # Reschedule tickstorun leftover after paging IO.
+        tickstodefer += tickstorun;
+        tickstorun = min(tickstodefer, quantum);
+        tickstodefer = tickstodefer - tickstorun;
+        yieldcpu()@
+    running_memory -> scheduling cpu()[@
+            pcb.pagetable[pageNumber][0] > -1 and tickstorun < 1
+                and tickstodefer > 0@]/@
+        pcb.pagetable[pageNumber][1]
+            = 1 if iswrite else pcb.pagetable[pageNumber][1];
+            # ^^^ Mark dirty bit if this is a write.
+        reinsertInVictimQueue;
+        processor.contextsFree += 1 ;
+        signalEvent(processor.readyq.deq(), 'contextReady')
+            if len(processor.readyq) > 0 else noop();
+        tickstorun = min(tickstodefer, quantum);
+        tickstodefer = tickstodefer - tickstorun;
+        yieldcpu()@
+    running_memory -> rescheduling cpu()[@
+            pcb.pagetable[pageNumber][0] > -1 and tickstorun < 1
+                and tickstodefer  < 1@]/@
+        pcb.pagetable[pageNumber][1]
+            = 1 if iswrite else pcb.pagetable[pageNumber][1];
+            # ^^^ Mark dirty bit if this is a write.
+        reinsertInVictimQueue ;
+        processor.contextsFree += 1 ;
+        signalEvent(processor.readyq.deq(), 'contextReady')
+            if len(processor.readyq) > 0 else noop();
+        yieldcpu()@
+    rescheduling -> terminated yieldcpu()[@time() >= endtime@]/
+    rescheduling -> waiting_io yieldcpu()[]/@
+        # Pick an iodevice of -1 (process terminal) or one of
+        # the fastio devices. Save the last fastio for paging.
+        iodevice = sample(-1, len(processor.fastio)-2, 'uniform');
+        io(iodevice)@
+    waiting_io -> scheduling io()[]/@
+        cpuburst = sample(1, 250, 'exponential', 25) if iobound
+            else sample(100, 1100, 'revexponential', 1000);
+        tickstorun = min(cpuburst, quantum);
+        tickstodefer = cpuburst - tickstorun;
+        yieldcpu()@
+}
+
+processor

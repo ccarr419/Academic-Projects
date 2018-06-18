@@ -1,0 +1,9 @@
+program testProg
+dec
+val1, val2, val3 : int;
+realval1, testval : real;
+begin
+	Read(val1, val2, val3);
+	realval1 = (x / y) * 23;
+	Write(realval1);
+end.

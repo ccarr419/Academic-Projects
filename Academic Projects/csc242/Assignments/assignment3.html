@@ -1,0 +1,155 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+   
+<!--
+	Name: 			Christian Carreras
+	Assignment 3: 		JavaScript
+	Purpose:		Find the total price of shipping on items
+	URL:			http://unixweb.kutztown.edu/~ccarr419/assignment3.html
+	Course:			CSC 242 - Fall 2013
+	Due Date:		10/14/2013
+-->
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+	<head>
+	<title>Assignment 3</title>
+	<style>
+		<!-- Change background color to a bluish color -->
+		body{background-color: #1133bb}
+		<!-- Alter em tag to include bold and white text-color -->
+		em{font-weight:bold; color:white}
+		<!-- Special user defined -->
+		.donotunderline {text-decoration: none; color: white}
+		<!-- Will underline when mouse is hovering over -->
+		a:hover {text-decoration: underline}
+	</style>
+	<!-- Header and link back to home page -->
+	<h1 style = "text-align: center; color: white">Assignment 3</h1>
+	<a href = "http://unixweb.kutztown.edu/~ccarr419/index.html">Home</a>
+	<hr/>
+	
+	<!-- Enable JavaScript -->
+	<script type = "text/javascript">
+		<!--
+		document.write("<em>");
+		//Variables
+		var paTax = 0.06; //Pa tax 6%
+		var shipTax = 0.00;
+		var totalprice = 0.00;
+		var totalamount = 0.00;
+		var shipNHand = 0.00; //Shipping & Handling
+		var subTotal = 0.00;
+		//Ask the user for how many items they wish to ship
+		var numitems = window.prompt("How many items are you shipping?");
+		numitems = parseInt(numitems); //Convert the string to int
+		
+		//Check to see if numitems is a number
+		if(isNaN(numitems) == false) {
+			//for loop to get the prices for every individual item
+			for(var item = 1; item <= numitems; item++) {
+				price = window.prompt("Please enter the price of item #" +item);
+				price = parseFloat(price);
+				//Check to see if the price is a number
+				if(isNaN(price) == false) {
+					totalprice += price; //Add to total sum
+					price = price.toFixed(2); //Only show two decimal spaces
+					document.writeln("Item #" +item +": $" +price +"<br/>");
+				}
+				//Error message
+				else {
+					window.alert("Invalid Entry");
+					item = item - 1;
+				}
+			}
+			totalprice = totalprice.toFixed(2);
+			document.writeln("Total Price: $" +totalprice +"<br/>");
+			//Ask user for the shipping method
+			shipmethod = window.prompt("Shipping Method: ('S' for Standard 'E' for Expedited)");
+			
+			//Expedited Shipping
+			if(shipmethod == 'E') {
+				document.writeln("Expedited shipping:");
+				if(totalprice < 25) {
+					shipNHand = 9.5;
+					document.writeln("$" +shipNHand +"<br/>");
+					document.writeln("Pa Sales Tax: $" +paTax +"<br/>");
+					totalprice = parseFloat(totalprice); //Convert string to float
+					subTotal = totalprice + shipNHand; //Add total price and S&H
+					shipTax = subTotal * paTax; //Find the tax
+					totalamount = subTotal + shipTax;
+					totalamount = totalamount.toFixed(2);
+					document.writeln("Total Amount: $" +totalamount +"<br/>");
+				}
+				else if(totalprice < 50) {
+					shipNHand = 12;
+					document.writeln("$" +shipNHand +"<br/>");
+					document.writeln("Pa Sales Tax: $" +paTax +"<br/>");
+					totalprice = parseFloat(totalprice);
+					subTotal = totalprice + shipNHand;
+					shipTax = subTotal * paTax;
+					totalamount = subTotal + shipTax;
+					totalamount = totalamount.toFixed(2);
+					document.writeln("Total Amount: $" +totalamount +"<br/>");
+				}
+				else {
+					shipNHand = 15.25;
+					document.writeln("$" +shipNHand +"<br/>");
+					document.writeln("Pa Sales Tax: $" +paTax +"<br/>");
+					totalprice = parseFloat(totalprice);
+					subTotal = totalprice + shipNHand;
+					shipTax = subTotal * paTax;
+					totalamount = subTotal + shipTax;
+					totalamount = totalamount.toFixed(2);
+					document.writeln("Total Amount: $" +totalamount +"<br/>");
+				}
+			}
+			
+			//Standard Shipping
+			else {
+				document.writeln("Standard shipping:");
+				if(totalprice < 25) {
+					shipNHand = 4.5;
+					document.writeln("$" +shipNHand +"<br/>");
+					document.writeln("Pa Sales Tax: $" +paTax +"<br/>");
+					totalprice = parseFloat(totalprice);
+					subTotal = totalprice + shipNHand;
+					shipTax = subTotal * paTax;
+					totalamount = subTotal + shipTax;
+					totalamount = totalamount.toFixed(2);
+					document.writeln("Total Amount: $" +totalamount +"<br/>");
+				}
+				else if(totalprice < 50) {
+					shipNHand = 7;
+					document.writeln("$" +shipNHand +"<br/>");
+					document.writeln("Pa Sales Tax: $" +paTax +"<br/>");
+					totalprice = parseFloat(totalprice);
+					subTotal = totalprice + shipNHand;
+					shipTax = subTotal * paTax;
+					totalamount = subTotal + shipTax;
+					totalamount = totalamount.toFixed(2);
+					document.writeln("Total Amount: $" +totalamount +"<br/>");
+				}
+				else {
+					shipNHand = 10.25;
+					document.writeln("$" +shipNHand +"<br/>");
+					document.writeln("Pa Sales Tax: $" +paTax +"<br/>");
+					totalprice = parseFloat(totalprice);
+					subTotal = totalprice + shipNHand;
+					shipTax = subTotal * paTax;
+					totalamount = subTotal + shipTax;
+					totalamount = totalamount.toFixed(2);
+					document.writeln("Total Amount: $" +totalamount +"<br/>");
+				}
+			}
+			document.write("</em>");
+		}
+		//Error message
+		else
+			window.alert("Invalid Entry");
+		// -->
+	</script>	
+	</head>
+	<body>
+	</body>
+</html>

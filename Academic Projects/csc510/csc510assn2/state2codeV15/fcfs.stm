@@ -1,0 +1,70 @@
+# CSC 343, Fall 2013, STUDENT NAME:
+# fcfs.stm implements a first-come, first-served, non-preemptive scheduler as an
+# example for assignment 2. D. Parson.
+
+machine processor {
+    # Use this machine in all of your files in assignment 2 to start threads.
+    # It starts 10 threads, one every tick. I am starting them quickly so that
+    # algorithms like FCFS don't get swamped too much an early CPU-bound thread.
+    threadsToGo = 10, pid = -1, tid = -1 ;
+    start init, state makingThreads, accept doneStartingThreads ;
+    init -> makingThreads init()[]/@
+        processor.readyq = Queue(ispriority=False);
+        threadsToGo -= 1 ; fork()@
+    makingThreads -> makingThreads fork(pid, tid)[@threadsToGo > 0@]/@
+        threadsToGo -= 1 ; fork()@
+    makingThreads -> doneStartingThreads fork(pid, tid)[@threadsToGo == 0@]/
+}
+
+# For all parts of your assignment, half of every ten threads must be IO bound.
+# The others are CPU bound. The I/O bound threads must request between
+# 1 and 250 ticks using the exponential sampler, with the knee of the curve
+# (half of the sampled values) at 25 ticks. The CPU bound threads must
+# request between 100 and 1100 ticks using the revexponential sampler,
+# with the knee of the curve (half of the sampled values) at 1000 ticks.
+# All threads must continue to run until simulation time is >= 100,000.
+machine thread {
+    machineid = -1, pid = -1, tid = -1, iobound = @False@, endtime = 100000,
+        cpuburst = -1, iodevice = -2 ;
+    # Python treats 0 as False (not iobound) and 1 as True (iobound).
+    # The transition out of state init initializes the above variables.
+    start init, state scheduling, state ready, state running, state waiting,
+        state rescheduling, accept terminated ;
+    init -> scheduling init()[]/@machineid, pid, tid = getid();
+        iobound = True if ((pid % 2) == 1) else False ; yieldcpu()@
+        # ^^^ The odd pids are IO bound.
+        # The others (50%) are CPU bound. This job mix stresses the scheduling
+        # algorithms better than a strictly IO-bound or CPU-bound mix.
+    scheduling -> running yieldcpu()[@processor.contextsFree > 0@]/@
+        processor.contextsFree -= 1 ;
+        cpuburst = sample(1, 250, 'exponential', 25) if iobound
+            else sample(100, 1100, 'revexponential', 1000);
+        msg('pid ' + str(pid) + ' tid ' + str(tid)
+            + ' about to CPU for ' + str(cpuburst) + ' ticks');
+        cpu(cpuburst)@
+    scheduling -> ready yieldcpu()[@processor.contextsFree == 0@]/@
+        # Put myself in processor's readyq with FIFO priority.
+        msg('pid ' + str(pid) + ' tid ' + str(tid)
+            + ' about to wait, ready for CPU');
+        processor.readyq.enq(thread); waitForEvent('contextReady', False)@
+    ready -> scheduling contextReady()[]/@yieldcpu()@
+    running -> rescheduling cpu()[]/@
+        processor.contextsFree += 1 ;
+        msg('thread ' + str(tid) + ' checking readyq '
+            + str(processor.readyq.len())
+            + ' with contextsFree ' + str(processor.contextsFree));
+        signalEvent(processor.readyq.deq(), 'contextReady')
+            if len(processor.readyq) > 0 else noop();
+        yieldcpu()@
+    rescheduling -> terminated yieldcpu()[@time() >= endtime@]/
+    rescheduling -> waiting yieldcpu()[@time() < endtime@]/@
+        # iodevice of -1 (process terminal) or one of the fastio devices.
+        iodevice = sample(-1, len(processor.fastio)-1, 'uniform');
+        msg('thread ' + str(tid) + ' blocking on IO unit ' + str(iodevice));
+        msg('pid ' + str(pid) + ' tid ' + str(tid)
+            + ' about to IO on dev ' + str(iodevice));
+        io(iodevice)@
+    waiting -> scheduling io()[]/@yieldcpu()@
+}
+
+processor

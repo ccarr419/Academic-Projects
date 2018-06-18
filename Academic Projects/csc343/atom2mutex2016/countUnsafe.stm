@@ -1,0 +1,95 @@
+# countUnsafe.stm is a thread-unsafe STM that runs 1 process of
+# threadCount threads
+# CSC 343, Fall 2016. D. Parson, assignment 1.
+# STUDENT: Add your name and comments summarizing the program here.
+# Write one summary comment with each transition that summarizes
+# what that transition does. Update these summaries in each version
+# of the program.
+
+machine processor {
+    # STUDENT: Do not change the processor state machine.
+    # Use this machine in all of your files in assignment 2 to fork
+    # 1 process that runs many threads.
+    start init, accept processorDone ;
+    init -> processorDone init()[]/@
+        fork()@
+}
+
+# STUDENT work goes into machine thread according to the handout.
+# Add documentation comments for the code that you write!!!
+machine thread {
+    # You probably need to create additional variables.
+    # When the iterations to the transition to go into the terminated state
+    # increment loopCount to >= loopLimit, go to terminated.
+    loopCount = 0, loopLimit = 10, sumRegister = 0, differenceRegister = 0,
+        threadCount = 20,
+        # Adjust loopGrandTotal to loopLimit * threadCount in init ->.
+        loopGrandTotal = 0 ;
+    start init, state initThreads,
+        state fetchSum, state addSum, state storeSum,
+        state fetchDifference, state addDifference, state storeDifference,
+        state lockSum, state unlockSum,
+        state lockDifference, state unlockDifference,
+        accept terminated ;
+    # Start the simulation rolling.
+    init -> initThreads init()[]/@
+        machineID, pid, tid = getid();
+        cpu(1)@
+    # STUDENT: Initialize the pcb HERE before spwaning any other threads.
+    initThreads -> lockSum cpu()[@tid == 0@]/@
+        loopGrandTotal = loopLimit * threadCount ;
+        pcb.sharedSum = 0 ;
+        pcb.sharedDifference = 0 ;
+        spawn();
+        cpu(1)@
+    # All but the final thread spawns its successor.
+    initThreads -> lockSum cpu()[@tid > 0 and tid < (threadCount-1)@]/@
+        spawn();
+        cpu(1)@
+    # All but the final thread spawns its successor.
+    initThreads -> lockSum cpu()[@tid == (threadCount-1)@]/@
+        cpu(1)@
+    # Fetch sum into register after locking the atomic or mutex.
+    lockSum -> fetchSum cpu()[]/@
+        sumRegister = pcb.sharedSum ;
+        cpu(1)@
+    # Add 1 to the sum in the register.
+    fetchSum -> addSum cpu()[]/@
+        sumRegister += 1 ;
+        cpu(1)@
+    # store the register back into regular memory via the pcb.
+    addSum -> storeSum cpu()[]/@
+        pcb.sharedSum = sumRegister ;
+        cpu(1)@
+    # release the atomic spin lock or mutex
+    storeSum -> unlockSum cpu()[]/@
+        cpu(1)@
+    # NOW DO THE EQUIVALENT FOR DIFFERENCE
+    unlockSum -> lockDifference cpu()[]/@
+        cpu(1)@
+    # Fetch difference into register after locking the atomic or mutex.
+    lockDifference -> fetchDifference cpu()[]/@
+        differenceRegister = pcb.sharedDifference ;
+        cpu(1)@
+    # Add 1 to the difference in the register.
+    fetchDifference -> addDifference cpu()[]/@
+        differenceRegister -= 1 ;
+        cpu(1)@
+    # store the register back into regular memory via the pcb.
+    addDifference -> storeDifference cpu()[]/@
+        pcb.sharedDifference = differenceRegister ;
+        cpu(1)@
+    # release the atomic spin lock or mutex
+    storeDifference -> unlockDifference cpu()[]/@
+        cpu(1)@
+    # Do cycle again until loopLimit is hit.
+    unlockDifference -> lockSum cpu()[@(loopCount+1) < loopLimit@]/@
+        loopCount += 1 ;
+        cpu(1)@
+    unlockDifference -> terminated cpu()[@(loopCount+1) == loopLimit@]/@
+        msg("ENDTHREAD," + str(tid) + ",SHAREDSUM," + str(pcb.sharedSum)
+            + ",SHAREDDIFF," + str(pcb.sharedDifference))@
+}
+
+processor
+

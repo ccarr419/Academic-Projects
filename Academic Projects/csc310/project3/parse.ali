@@ -1,0 +1,182 @@
+V "GNAT Lib v4.4"
+M P W=b
+P SS ZX
+R nnnnnnnvnnnnnnnvnnvnnnvvnnnnnnnvnnnnnnvnnvnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnnnn
+
+U parse%b		parse.adb		7d6d1790 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.command_line%s	a-comlin.adb		a-comlin.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W class_io%s		class_io.ads		class_io.ali
+W gnat%s		gnat.ads		gnat.ali
+W gnat.command_line%s	g-comlin.adb		g-comlin.ali
+W lex%s			lex.adb			lex.ali
+W lex_list%s		lex_list.adb		lex_list.ali
+W lexemes%s		lexemes.adb		lexemes.ali
+W symbol_table%s	symbol_table.adb	symbol_table.ali
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.finalization_implementation%s  s-finimp.adb  s-finimp.ali
+W system.finalization_root%s  s-finroo.adb	s-finroo.ali
+W system.parameters%s	s-parame.adb		s-parame.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.string_ops_concat_3%s  s-sopco3.adb	s-sopco3.ali
+W system.string_ops_concat_4%s  s-sopco4.adb	s-sopco4.ali
+
+D ada.ads		20090114110545 9c7dd3ea
+D a-charac.ads		20090114110546 506ce725
+D a-chlat1.ads		20090114110546 e9ee6d0a
+D a-comlin.ads		20090414135038 3b71d99c
+D a-contai.ads		20090114110545 7b35f559
+D a-coorma.ads		20090414134544 ddd4d70c
+D a-crbltr.ads		20090414134920 3ec6743e
+D a-convec.ads		20090414134727 317e4a8c
+D a-except.ads		20090414134449 b54b55de
+D a-finali.ads		20090414134820 9eaacebd
+D a-filico.ads		20090414134951 9299732a
+D a-inteio.ads		20090114110546 03bc737c
+D a-ioexce.ads		20090114110546 be0900a0
+D a-stream.ads		20090414134419 34aca5be
+D a-string.ads		20090114110545 87b4230b
+D a-strmap.ads		20090414135051 5253a637
+D a-strunb.ads		20090414135011 f0549c04
+D a-tags.ads		20090414134730 bfa07446
+D a-textio.ads		20090414134822 fe8af46e
+D a-tiinio.ads		20090414134653 949a7272
+D a-unccon.ads		20090114110545 51e09df2
+D a-uncdea.ads		20090114110545 dc667e6d
+D class_io.ads		20150501060650 589ac1c6
+D gnat.ads		20090114110546 96410e68
+D g-comlin.ads		20090114110546 b24642a5
+D g-dirope.ads		20090114110545 92471343
+D g-os_lib.ads		20090414135015 c015094d
+D g-regexp.ads		20090114110545 a4b9afe8
+D interfac.ads		20090414134625 a69cad5c
+D i-cstrea.ads		20090414134744 e1e064a9
+D lex.ads		20150501051428 3a4ed21d
+D lex_list.ads		20150501073133 02c6dc47
+D lexemes.ads		20150501052413 6fe3f9e0
+D parse.adb		20150501070440 5d7f52a4
+D symbol_table.ads	20150501054613 abb6f367
+D system.ads		20090414134649 df55302f
+D s-crtl.ads		20090414134633 997234a1
+D s-exctab.ads		20090414134921 5c1c61ae
+D s-ficobl.ads		20090414134918 8bb681e5
+D s-finimp.ads		20090414135057 9449f4cb
+D s-finroo.ads		20090414134701 1408f9d1
+D s-os_lib.ads		20090414135040 719f619c
+D s-parame.ads		20090414134647 f32e56e9
+D s-regexp.ads		20090114110545 1ac245ef
+D s-secsta.ads		20090414134519 7bae3621
+D s-soflin.ads		20090414134425 0c6fd39d
+D s-stache.ads		20090414134825 257b3be8
+D s-stalib.ads		20090414135007 52b793d5
+D s-stoele.ads		20090414134841 ed966df3
+D s-stoele.adb		20090414134835 e9998c78
+D s-stratt.ads		20090414134859 fef7c1da
+D s-strops.ads		20090414134829 845f72d2
+D s-sopco3.ads		20090414134748 72ce1063
+D s-sopco4.ads		20090414134818 bc112723
+D s-sopco5.ads		20090414134845 191315e8
+D s-string.ads		20090414134511 04f2ee70
+D s-traent.ads		20090414134453 bd5f2753
+D s-unstyp.ads		20090414134601 c0f9fae5
+D s-wchcon.ads		20090414134706 ab028799
+X 1 ada.ads
+16K9*Ada 19e8 34|14r6 14r37 15r6 15r37 16r6 16r37 18r6 18r37
+X 4 a-comlin.ads
+36K13*Command_Line 134e21 34|16w10 16r41
+39V13*Argument_Count{natural} 34|173r12 178r15 191r15 191r38 196r36 210r44
+46V13*Argument{string} 34|55r30 56r42 59r41 60r48 62r53 67r45 88r30 89r42
+. 91r45 92r48 94r53 99r45 115r30 116r42 117r50 123r45 180r30 181r42 186r45
+. 193r30 197r51 202r33 204r29 211r59
+X 6 a-coorma.ads
+51R9*Map 34|27r17[35|23] 50r25[35|23] 83r25[35|23] 111r25[35|23]
+X 8 a-convec.ads
+53R9*Vector 34|28r17[32|24] 48r39[32|24] 81r39[32|24] 109r66[32|24] 136r55[32|24]
+X 12 a-inteio.ads
+18K13*Integer_Text_IO[20|45] 34|15w10 15r41
+X 15 a-string.ads
+16K13*Strings 35e16 34|18r10 18r41
+X 17 a-strunb.ads
+39K21*Unbounded 428e26 34|18w18 18r49
+42R9*Unbounded_String 395e14 34|137r27
+47V13*Length{natural} 34|149r30
+57V13*To_Unbounded_String{42R9} 34|146r28
+102V13*Element{character} 34|147r25 166r33
+X 19 a-textio.ads
+48K13*Text_IO 506e16 34|14w10 14r41
+51P9*File_Type(369R9) 34|26r11 49r19 82r19 110r19
+166U14*New_Line 34|118r25 120r25
+242U14*Put 34|161r41
+263U14*Put_Line 34|60r33 62r33 67r25 92r33 94r33 99r25 117r25 121r25 123r25
+. 174r17 175r17 184r25 186r25 205r33 218r25
+X 23 class_io.ads
+12K9*class_io 19e13 34|19w6 19r37
+X 24 gnat.ads
+36K9*GNAT 39e9 34|17r6 17r37
+X 25 g-comlin.ads
+247K14*Command_Line 854e22 34|17w11 17r42
+X 31 lex.ads
+24K9*lex 52e8 34|20w6 20r37
+28V18*checkFile{boolean} 34|55r20 88r20 115r20 180r20 193r20 202r23
+32U19*openFile 34|56r25 89r25 116r25 181r25
+49U19*computeFile 34|57r25 90r25 119r25 182r25
+X 32 lex_list.ads
+21K9*lex_list 77e13 34|22w6 22r37
+24K17*lList[8|43] 34|28r11 48r33 81r33 109r60 136r49
+37V18*writeToFile{boolean} 34|59r29
+X 33 lexemes.ads
+20K9*lexemes 48e12 34|21w6 21r37
+X 34 parse.adb
+25U11*parse 25b11 227l5 227t10
+26p1 inFile{19|51P9} 181m34 182m37
+27r1 sMap{6|51R9[35|23]} 182m45
+28r1 lexList{8|53R9[32|24]} 182m51 197m70 212m49
+29i1 i{positive} 194m25 196r31 197r60 197r64 198m33 198r38 208m33 210r39
+. 211r68 211r72 213m41 213r46
+30i1 f{positive} 195m25 197r67 209m33 211r75
+34K17 error 38l13 38e18 64r39 68r31 96r39 100r31 124r31 187r31 206r39 219r31
+. 224r14 225r14 226r14
+35X17 fileNotFound 68r37 100r37 124r37 187r37 219r37 224r20
+36X17 fileExists 64r45 96r45 225r20
+37X17 commandLineFail 206r45 226r20
+47U19 lexemesOut 47b19 47>30 47>46 48=17 70l13 70t23 152r41
+47i30 j{positive} 59r50 60r57 62r62
+47i46 f{positive} 55r39 56r51 67r54
+48r17 lexList{8|53R9[32|24]} 57m51 59r54
+49p9 inFile{19|51P9} 56m34 57m37
+50r9 sMap{6|51R9[35|23]} 57m45
+80U19 symbolTableOut 80b19 80>34 80>50 81=17 102l13 102t27 155r41
+80i34 j{positive} 91r54 92r57 94r62
+80i50 f{positive} 88r39 89r51 99r54
+81r17 lexList{8|53R9[32|24]} 90m51
+82p9 inFile{19|51P9} 89m34 90m37
+83r9 sMap{6|51R9[35|23]} 90m45 91r58
+109U19 echoFile 109b19 109>28 109=44 126l13 126t21 158r41
+109i28 f{positive} 115r39 116r51 117r59 123r54
+109r44 lexList{8|53R9[32|24]} 119m51
+110p9 inFile{19|51P9} 116m34 119m37
+111r9 sMap{6|51R9[35|23]} 119m45
+135U19 checkCommSwitches 135b19 135>37 135>55 136>17 136=33 168l13 168t30
+. 197r33 211r41
+135s37 cmls{string} 146r48
+135i55 i{positive} 144r22
+136i17 f{positive} 152r55 155r59 158r50
+136r33 lexList{8|53R9[32|24]} 152m58 155m62 158m53
+137r9 cmlsStr{17|42R9} 146m17 147r33 149r37 166r41
+138e9 char{character} 147m17 150r30 166m25
+139i9 idx{positive} 142m17 147r42 149r23 165m25 165r32 166r50
+140i9 j{positive} 144m17 152r52 155r56
+X 35 symbol_table.ads
+18K9*symbol_table 34|23w6 23r37 35|37e17
+23K17*table[6|45] 34|27r11 50r19 83r19 111r19
+35V18*writeSymbolFile{boolean} 34|91r29
+

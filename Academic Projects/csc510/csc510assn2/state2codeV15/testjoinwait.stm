@@ -1,0 +1,24 @@
+# D. Parson, testjoinwait.stm is test input for CSC343Compile.py
+# It tests join(), exit(). August 2015.
+
+machine processor {
+    start init, accept done ;
+    init -> done init()[]/@fork();fork();fork()@;
+}
+
+machine thread {
+    start init, state mid, accept done ;
+    init -> mid init()[]/@machineid, pid, tid = getid();
+        if tid == 0: pcb.master = thread ;
+        sleep(0)@
+    mid -> done sleep()[@tid == 0 and pid == 0@]/@
+        pcb.master=thread;spawn();spawn(); spawn();sleep(1000);@
+    mid -> done sleep()[@tid == 0 and pid == 1@]/@
+        pcb.master=thread;spawn();spawn(); spawn();wait(0);@
+    mid -> done sleep()[@tid == 1 or tid == 2@]/@join(pcb.master);@
+    mid -> done sleep()[@tid > 2 and pid == 1@]/@sleep(100);exit(10);@
+    mid -> done sleep()[@tid > 2 and pid == 0@]/@sleep(1)@
+    mid -> done sleep()[@pid == 2@]/@wait(0);@
+}
+
+processor

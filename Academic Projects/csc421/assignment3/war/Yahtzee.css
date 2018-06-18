@@ -1,0 +1,141 @@
+/*
+* Author:       Christian Carreras
+* File Name:    Yahtzee.css
+* File Version: 1.0
+* File Date:    10/27/2017
+* Due Date:     11/03/2017
+* Assignment:   #3
+* Professor:    Dr. Dylan Schwesinger
+* Course #:     CSC421
+* Course Name:  Web-Based Software Design & Development
+* University:   Kutztown University
+* Major:        CSCM Software Development
+* Purpose:      This css file creates rules for the style of the Yahtzee
+*               web-app. Some rules were meant to be used from instantiation
+*               and rules were meant to be added at run-time. Most rules
+*               applies to class-level only meaning the tag has to identify
+*               with the rule class before the style is applied. There is
+*               however a couple of execeptions which act as global rules
+*               for specific html tags.
+*/
+
+/* Set the background for the whole web-app */
+html {
+    background-color: aliceblue;
+}
+
+/* Style for a table caption/header */
+caption {
+    font-size: 2em;
+    font-weight: bold;
+    color: #777777;
+    text-align: center;
+}
+
+/* Style for the container that holds game-necessary functionalilty */
+.game {
+    position: absolute;
+    width: 386px;
+    left: 366px;
+    bottom: 0;
+    top: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+/* Style for the container that holds scoresheet information */
+.left {
+    position: absolute;
+    width: 356px;
+    left:0;
+    bottom: 0;
+    top: 0;
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
+    border-color: grey;
+    background-color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Style for the table inside the scoresheet container */
+.sideTable {
+    width: 100%;
+    height: 100%;
+    align: center;
+    border-collapse: collapse;
+    border: 1px solid grey;
+    text-align: left;
+}
+
+/* Style for the cells inside the scoresheet table */
+.tSide {
+    border: 1px solid grey;
+    padding: 10px;
+}
+
+/* Style for the footer containing author information etc. */
+.footer {
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+}
+
+/* Set the style for buttons within the category grid */
+.gridButton {
+    width: 100%;
+    border-width: 0px;
+}
+
+/* Set the hovering-style for buttons within the category grid */
+.gridButton:hover {
+    background-color: silver;
+}
+
+/* Set the style for the category grid */
+.gridStyle {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+}
+
+/* Set the style for individual cells within the category grid */
+.gridCell {
+    border: 1px solid grey;
+    text-align: center;
+}
+
+/* Set the background-color for rows in a table/grid */
+.gridRow {
+    background-color: white;
+}
+
+/* Set the alternative background-color for rows in a table/grid */
+.altRow {
+    background-color: whitesmoke;
+}
+
+/* Set the hover-background-color for rows in a table/grid */
+.gridRow:hover, .altRow:hover {
+    background-color: silver;
+}
+
+/* Override the style for gwt ToggleButtons for all-combinations */
+.gwt-ToggleButton-up, .gwt-ToggleButton-up-hovering, .gwt-ToggleButton-down, 
+.gwt-ToggleButton-down-hovering {
+    text-align: center;
+    line-height: 50px;
+}
+
+/* Override the background-color for gwt ToggleButtons with an up value */
+.gwt-ToggleButton-up, .gwt-ToggleButton-up-hovering {
+    background: white !important;
+    
+}
+
+/* Override the background-color for gwt ToggleButtons with a down value */
+.gwt-ToggleButton-down, .gwt-ToggleButton-down-hovering {
+    background: lemonchiffon !important;
+}

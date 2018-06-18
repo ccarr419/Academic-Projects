@@ -1,0 +1,54 @@
+\hypertarget{countWords_8cpp}{
+\section{countWords.cpp File Reference}
+\label{countWords_8cpp}\index{countWords.cpp@{countWords.cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$fstream$>$}\par
+{\ttfamily \#include $<$string$>$}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{countWords_8cpp_af59f9c598592495ec26d698087cffa90}{countTotalWords} (char $\ast$$\ast$)
+\item 
+int \hyperlink{countWords_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{countWords_8cpp_af59f9c598592495ec26d698087cffa90}{
+\index{countWords.cpp@{countWords.cpp}!countTotalWords@{countTotalWords}}
+\index{countTotalWords@{countTotalWords}!countWords.cpp@{countWords.cpp}}
+\subsubsection[{countTotalWords}]{\setlength{\rightskip}{0pt plus 5cm}int countTotalWords (char $\ast$$\ast$ {\em argv})}}
+\label{countWords_8cpp_af59f9c598592495ec26d698087cffa90}
+
+
+
+\begin{DoxyCode}
+37 {
+38         string tempString; //Temporarily holds the string given by the input stre
+      am
+39         ifstream inf; //The input file
+40         int wordCounter = 0;
+41 
+42         inf.open(argv[1]);
+43         //Loop until the end of the file
+44         while(inf >> tempString)
+45                 wordCounter++;
+46         inf.close();
+47         //Returns the number of words in the file.
+48         return wordCounter;
+49 }
+\end{DoxyCode}
+\hypertarget{countWords_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{
+\index{countWords.cpp@{countWords.cpp}!main@{main}}
+\index{main@{main}!countWords.cpp@{countWords.cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (int {\em argc}, \/  char $\ast$ {\em argv}\mbox{[}$\,$\mbox{]})}}
+\label{countWords_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+
+\begin{DoxyCode}
+31 {
+32         return countTotalWords(argv);
+33 }
+\end{DoxyCode}

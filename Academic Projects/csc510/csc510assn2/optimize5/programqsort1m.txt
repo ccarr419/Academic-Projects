@@ -1,0 +1,50 @@
+# programqsort1m.txt
+
+int [] qsort = function(int [] iarray) {
+    int getMedian = function(int [] subarray, int moe, int larry, int cheese) {
+        # 'DEBUG MEDIAN ' ~ length(subarray) ~ ' ' ~ moe ~ ' ' ~ larry ~ ' '
+            # ~ cheese ;
+        return ((subarray[moe] >= subarray[larry]
+                    && subarray[larry] >= subarray[cheese]
+                || subarray[cheese] >= subarray[larry]
+                    && subarray[larry] >= subarray[moe]) ? larry
+            : ((subarray[larry] >= subarray[moe]
+                    && subarray[moe] >= subarray[cheese]
+                || subarray[cheese] >= subarray[moe]
+                    && subarray[moe] >= subarray[larry]) ? moe : cheese));
+    }
+    int [] partition = function(int [] inarray, int pivotix,
+            int position, int [] leftarray, int [] rightarray) {
+        return(position >= length(inarray)
+            ? (qsort(leftarray) + [inarray[pivotix]] + qsort(rightarray))
+            : (position == pivotix)
+                ? partition(inarray, pivotix, position+1, leftarray, rightarray)
+                : ((inarray[position] <= inarray[pivotix])
+                    ? partition(inarray, pivotix, position+1,
+                        leftarray + [inarray[position]], rightarray)
+                    : partition(inarray, pivotix, position+1,
+                        leftarray, rightarray + [inarray[position]])));
+    }
+    return ((length(iarray) < 2) ? iarray
+        : partition(iarray, getMedian(iarray, 0, length(iarray)/2,
+                                        length(iarray)-1), 0, [], []));
+}
+
+string printiarray = function(int [] iarray, int i) {
+    return (i > -1 && i < length(iarray))
+        ? (iarray[i] ~ printiarray(iarray, i+1))
+        : ' ';
+}
+
+int [] makeBigArray = function(int bound) {
+    int [] helpmakeArray = function(int frontier, int [] sofar) {
+        return (frontier >= bound) ? sofar
+            : helpmakeArray(frontier + 1, sofar + [frontier, -frontier]);}
+    return helpmakeArray(0, []);
+}
+
+int [] iarr = makeBigArray(60000);
+'pre-qs';
+printiarray(iarr, 0);
+'qs';
+printiarray(qsort(iarr), 0);

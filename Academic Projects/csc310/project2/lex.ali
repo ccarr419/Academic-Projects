@@ -1,0 +1,184 @@
+V "GNAT Lib v4.4"
+M P W=b
+P SS ZX
+R nnnnnnnnnnnnvnnvnnvnnnvvnnnnvnnvnnnnnnvnnvnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnnnn
+
+U lex%b			lex.adb			d2c32dab NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.command_line%s	a-comlin.adb		a-comlin.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.enumeration_aux%s  a-tienau.adb	a-tienau.ali
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.finalization_implementation%s  s-finimp.adb  s-finimp.ali
+W system.finalization_root%s  s-finroo.adb	s-finroo.ali
+W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+W system.parameters%s	s-parame.adb		s-parame.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.string_ops%s	s-strops.adb		s-strops.ali
+W system.string_ops_concat_3%s  s-sopco3.adb	s-sopco3.ali
+W system.val_enum%s	s-valenu.adb		s-valenu.ali
+
+D ada.ads		20090114110545 9c7dd3ea
+D a-charac.ads		20090114110546 506ce725
+D a-chlat1.ads		20090114110546 e9ee6d0a
+D a-comlin.ads		20090414135038 3b71d99c
+D a-except.ads		20090414134449 b54b55de
+D a-finali.ads		20090414134820 9eaacebd
+D a-filico.ads		20090414134951 9299732a
+D a-inteio.ads		20090114110546 03bc737c
+D a-ioexce.ads		20090114110546 be0900a0
+D a-stream.ads		20090414134419 34aca5be
+D a-string.ads		20090114110545 87b4230b
+D a-strmap.ads		20090414135051 5253a637
+D a-strunb.ads		20090414135011 f0549c04
+D a-tags.ads		20090414134730 bfa07446
+D a-textio.ads		20090414134822 fe8af46e
+D a-tienau.ads		20090414134912 671c7a9a
+D a-tienio.ads		20090414135046 213fedba
+D a-tienio.adb		20090414135043 ba330dab
+D a-tiinio.ads		20090414134653 949a7272
+D a-unccon.ads		20090114110545 51e09df2
+D interfac.ads		20090414134625 a69cad5c
+D i-cstrea.ads		20090414134744 e1e064a9
+D lex.adb		20150314054012 e4d0ef21
+D system.ads		20090414134649 df55302f
+D s-crtl.ads		20090414134633 997234a1
+D s-exctab.ads		20090414134921 5c1c61ae
+D s-ficobl.ads		20090414134918 8bb681e5
+D s-finimp.ads		20090414135057 9449f4cb
+D s-finroo.ads		20090414134701 1408f9d1
+D s-imenne.ads		20090414134936 97a402ea
+D s-parame.ads		20090414134647 f32e56e9
+D s-secsta.ads		20090414134519 7bae3621
+D s-soflin.ads		20090414134425 0c6fd39d
+D s-stache.ads		20090414134825 257b3be8
+D s-stalib.ads		20090414135007 52b793d5
+D s-stoele.ads		20090414134841 ed966df3
+D s-stoele.adb		20090414134835 e9998c78
+D s-stratt.ads		20090414134859 fef7c1da
+D s-strops.ads		20090414134829 845f72d2
+D s-sopco3.ads		20090414134748 72ce1063
+D s-sopco4.ads		20090414134818 bc112723
+D s-sopco5.ads		20090414134845 191315e8
+D s-traent.ads		20090414134453 bd5f2753
+D s-unstyp.ads		20090414134601 c0f9fae5
+D s-valenu.ads		20090414134424 9e547a01
+D s-wchcon.ads		20090414134706 ab028799
+X 1 ada.ads
+16K9*Ada 19e8 23|22r6 22r37 23r6 23r37 25r6 25r37 27r6 27r37 43r33
+X 4 a-comlin.ads
+36K13*Command_Line 134e21 23|25w10 25r41
+39V13*Argument_Count{natural} 23|339r12 351r15
+46V13*Argument{string} 23|352r36 353r34 354r37
+X 8 a-inteio.ads
+18K13*Integer_Text_IO[19|45] 23|23w10 23r41
+X 11 a-string.ads
+16K13*Strings 35e16 23|27r10 27r41
+X 13 a-strunb.ads
+39K21*Unbounded 428e26 23|27w18 27r49
+42R9*Unbounded_String 395e14 23|178r38 230r30 259r33
+47V13*Length{natural} 23|233r20
+65U14*Set_Unbounded_String 23|238r17 263r25 316r33
+94V13*"&"{42R9} 23|270r62 274r62 278r62
+102V13*Element{character} 23|182r25
+133V13*"="{boolean} 23|192r25 195r28 198r28 201r28 204r28 207r28 210r28 213r28
+X 15 a-textio.ads
+48K13*Text_IO 506e16 23|22w10 22r41 43r37
+51P9*File_Type(369R9) 23|46r41 59r25 77r25 97r43 117r43 137r46 158r46 229r46
+. 255r46 256r33
+52n23*In_File{52E9} 23|61r32 80r32 101r38 122r38
+52n32*Out_File{52E9} 23|140r41 162r41
+86U14*Create 23|140r25 162r25
+92U14*Open 23|61r17 80r17 101r25 122r25
+98U14*Close 23|62r17 81r17 332r17 333r17 364r1
+165U14*New_Line 23|236r25 314r33 330r17
+168U14*Skip_Line 23|328r25
+171V13*End_Of_Line{boolean} 23|264r35
+183V13*End_Of_File{boolean} 23|262r27
+205U14*Get 23|265r33
+242U14*Put 23|340r17 343r17 345r17 352r17
+249U14*Get_Line 23|341r17 346r17
+259U14*Put_Line 23|327r25
+263U14*Put_Line 23|100r25 103r25 121r25 124r25 141r25 143r25 163r25 166r25
+. 261r17 334r17
+294X4*Name_Error 23|65r30 84r30
+X 17 a-tienio.ads
+46k21*Enumeration_IO 75e31 23|43r45
+54U14 Put 23|235r34[43] 313r42[43]
+X 23 lex.adb
+29U11*lex 29b11 366l5 366t8
+32E14 charType 34e57 43r60 178r63 179r17 231r17 258r33
+32n27 progsym{32E14} 193r34
+32n36 decsym{32E14} 196r34
+32n44 beginsym{32E14} 199r34
+32n54 endsym{32E14} 202r34
+32n62 typesym{32E14} 205r34 208r34
+32n71 readsym{32E14} 211r34
+33n33 writesym{32E14} 214r34
+33n43 operator{32E14} 307r58
+33n53 lParen{32E14} 299r58
+33n61 rParen{32E14} 303r58
+33n69 id{32E14} 217r34
+33n73 num{32E14} 185r42
+34n33 comma{32E14} 295r58
+34n40 colon{32E14} 291r58
+34n47 semicolon{32E14} 287r58
+38K17 error 41l13 41e18 104r31 125r31 144r31 168r31 360r14 361r14
+39X17 fileNotFound 104r37 125r37 360r20
+40X17 fileNameTaken 144r37 168r37 361r20
+43K17 class_io[17|46] 44r13 235r25 313r33
+46p9 inFile{15|51P9} 344m26 348m29 353m26 355m29 364m7
+46p17 outFile{15|51P9} 347m28 348m37 354m28 355m37
+47a9 fname{string} 341m26 343r36 343r42 344r34 346m26 347r37
+48i9 len{natural} 341m33 343r55 344r41 346m33 347r44
+58V18 checkFile{boolean} 58b18 58>28 66l13 66t22 99r20 139r24
+58s28 fname{string} 61r41
+59p9 tempFile{15|51P9} 61m22 62m23
+76V18 checkFile{boolean} 76b18 76>28 76>46 85l13 85t22 120r20 161r24
+76s28 fname{string} 80r41 80r47
+76i46 len{natural} 80r60
+77p9 tempFile{15|51P9} 80m22 81m23
+97U19 openFile 97b19 97=28 97>54 106l13 106t21 353r17
+97p28 inFile{15|51P9} 101m30
+97s54 fname{string} 99r30 101r47
+117U19 openFile 117b19 117=28 117>54 118>17 127l13 127t21 344r17
+117p28 inFile{15|51P9} 122m30
+117s54 fname{string} 120r30 122r47 122r53
+118i17 len{natural} 120r37 122r66
+137U19 createFile 137b19 137=30 137>57 147l13 147t23 354r17
+137p30 outFile{15|51P9} 140m32
+137s57 fname{string} 139r34 140r51 141r40 143r40
+158U19 createFile 158b19 158=30 158>57 159>17 171l13 171t23 347r17
+158p30 outFile{15|51P9} 162m32
+158s57 fname{string} 161r34 162r51 162r57 163r40 163r46 166r40 166r46
+159i17 len{natural} 161r41 162r70 163r59 166r59
+178V18 testString{32E14} 178b18 178>29 220l13 220t23 234r34
+178r29 iStr{13|42R9} 182r33 192r20 195r23 198r23 201r23 204r23 207r23 210r23
+. 213r23
+179e9 class{32E14} 185m33 186r40 193m25 194r32 196m25 197r32 199m25 200r32
+. 202m25 203r32 205m25 206r32 208m25 209r32 211m25 212r32 214m25 215r32 217m25
+. 218r32
+180e9 char{character} 182m17 183r22 189m33
+229U19 readPreStr 229b19 229=30 230=17 239l13 239t23 282r49 286r49 290r49
+. 294r49 298r49 302r49 306r49 326r25
+229p30 outFile{15|51P9} 235r38 236r34
+230r17 iStr{13|42R9} 233r27 234r45 238m38
+231e9 class{32E14} 234m25 235r47
+255U19 computeFile 255b19 255=31 256=17 335l13 335t24 348r17 355r17
+255p31 inFile{15|51P9} 262r39 264r47 265r37 328r35 332m23
+256p17 outFile{15|51P9} 282m60 286m60 290m60 294m60 298m60 302m60 306m60
+. 313r46 314r42 326m36 327r34 330r26 333m23
+257e9 char{character} 265m45 266r38 270r64 274r64 278r64 322m33
+258e9 class{32E14} 287m49 291m49 295m49 299m49 303m49 307m49 313r55
+259r9 iStr{13|42R9} 263m46 270m49 270r57 274m49 274r57 278m49 278r57 282m69
+. 286m69 290m69 294m69 298m69 302m69 306m69 316m54 326m45
+319L35 continue 271r54 275r54 279r54 283r54 310r54
+

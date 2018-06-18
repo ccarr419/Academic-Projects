@@ -1,0 +1,7 @@
+CSC552: Advanced Unix Programming, Kutztown University of Pennsylvania \begin{DoxyAuthor}{Author}
+Christian Carreras 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+03/07/2017 (SPRING2017)
+\end{DoxyDate}
+This project aims to replicate a client/server environment by using concurrent processes and IPC mechanisms. The client and server will each have their separate process as well as their own read and write ends from two separate pipes. To start, two pipes are created and then a second process is forked to separate the client and server. The client is the parent process and the server is the child. Each process will close the pipe ends that they will never use. The server will redirect its pipe ends to stdin and stdout and then exec while the client will send the file descriptors for the pipe ends being used as arguments in the exec function. All errors with pipes, forks, and execs are being accounted for with the use of perror (stderr). 

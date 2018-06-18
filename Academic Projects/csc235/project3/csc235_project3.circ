@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.7.1" version="1.0">
+This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+<lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#Base" name="6">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="6" map="Button2" name="Menu Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
+    <tool lib="6" map="Button3" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="6" name="Poke Tool"/>
+    <tool lib="6" name="Edit Tool"/>
+    <tool lib="6" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin">
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+  </toolbar>
+  <circuit name="main">
+    <a name="circuit" val="main"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(760,430)" to="(790,430)"/>
+    <wire from="(680,220)" to="(880,220)"/>
+    <wire from="(640,620)" to="(640,670)"/>
+    <wire from="(520,690)" to="(570,690)"/>
+    <wire from="(490,240)" to="(490,280)"/>
+    <wire from="(490,280)" to="(560,280)"/>
+    <wire from="(240,180)" to="(260,180)"/>
+    <wire from="(610,260)" to="(800,260)"/>
+    <wire from="(40,480)" to="(100,480)"/>
+    <wire from="(550,410)" to="(580,410)"/>
+    <wire from="(560,480)" to="(580,480)"/>
+    <wire from="(350,160)" to="(350,230)"/>
+    <wire from="(380,210)" to="(400,210)"/>
+    <wire from="(630,600)" to="(640,600)"/>
+    <wire from="(500,760)" to="(580,760)"/>
+    <wire from="(410,240)" to="(410,250)"/>
+    <wire from="(560,390)" to="(610,390)"/>
+    <wire from="(780,520)" to="(780,840)"/>
+    <wire from="(490,310)" to="(490,530)"/>
+    <wire from="(500,270)" to="(560,270)"/>
+    <wire from="(490,310)" to="(680,310)"/>
+    <wire from="(720,600)" to="(790,600)"/>
+    <wire from="(800,260)" to="(800,460)"/>
+    <wire from="(770,390)" to="(780,390)"/>
+    <wire from="(500,580)" to="(500,650)"/>
+    <wire from="(670,340)" to="(670,390)"/>
+    <wire from="(680,200)" to="(680,220)"/>
+    <wire from="(510,600)" to="(510,670)"/>
+    <wire from="(780,390)" to="(780,460)"/>
+    <wire from="(840,240)" to="(880,240)"/>
+    <wire from="(790,430)" to="(790,460)"/>
+    <wire from="(260,220)" to="(400,220)"/>
+    <wire from="(490,820)" to="(660,820)"/>
+    <wire from="(650,340)" to="(670,340)"/>
+    <wire from="(90,650)" to="(140,650)"/>
+    <wire from="(500,350)" to="(560,350)"/>
+    <wire from="(520,690)" to="(520,880)"/>
+    <wire from="(170,660)" to="(210,660)"/>
+    <wire from="(210,420)" to="(240,420)"/>
+    <wire from="(300,250)" to="(410,250)"/>
+    <wire from="(490,530)" to="(490,720)"/>
+    <wire from="(110,300)" to="(120,300)"/>
+    <wire from="(500,760)" to="(500,840)"/>
+    <wire from="(500,240)" to="(500,270)"/>
+    <wire from="(470,160)" to="(470,170)"/>
+    <wire from="(520,480)" to="(520,550)"/>
+    <wire from="(680,370)" to="(700,370)"/>
+    <wire from="(80,260)" to="(120,260)"/>
+    <wire from="(520,240)" to="(560,240)"/>
+    <wire from="(40,310)" to="(50,310)"/>
+    <wire from="(500,840)" to="(560,840)"/>
+    <wire from="(240,180)" to="(240,200)"/>
+    <wire from="(630,740)" to="(760,740)"/>
+    <wire from="(550,410)" to="(550,460)"/>
+    <wire from="(400,230)" to="(400,240)"/>
+    <wire from="(500,650)" to="(540,650)"/>
+    <wire from="(760,430)" to="(760,740)"/>
+    <wire from="(470,170)" to="(500,170)"/>
+    <wire from="(610,540)" to="(640,540)"/>
+    <wire from="(790,520)" to="(790,600)"/>
+    <wire from="(480,220)" to="(680,220)"/>
+    <wire from="(20,260)" to="(50,260)"/>
+    <wire from="(40,420)" to="(60,420)"/>
+    <wire from="(510,410)" to="(510,600)"/>
+    <wire from="(210,420)" to="(210,490)"/>
+    <wire from="(650,470)" to="(670,470)"/>
+    <wire from="(240,670)" to="(260,670)"/>
+    <wire from="(140,470)" to="(180,470)"/>
+    <wire from="(130,390)" to="(130,420)"/>
+    <wire from="(490,280)" to="(490,310)"/>
+    <wire from="(510,250)" to="(510,410)"/>
+    <wire from="(200,680)" to="(210,680)"/>
+    <wire from="(710,840)" to="(780,840)"/>
+    <wire from="(550,330)" to="(550,410)"/>
+    <wire from="(60,200)" to="(90,200)"/>
+    <wire from="(40,390)" to="(130,390)"/>
+    <wire from="(350,230)" to="(400,230)"/>
+    <wire from="(90,200)" to="(90,220)"/>
+    <wire from="(180,420)" to="(210,420)"/>
+    <wire from="(30,240)" to="(30,290)"/>
+    <wire from="(560,430)" to="(610,430)"/>
+    <wire from="(560,350)" to="(580,350)"/>
+    <wire from="(30,290)" to="(50,290)"/>
+    <wire from="(560,350)" to="(560,390)"/>
+    <wire from="(550,330)" to="(610,330)"/>
+    <wire from="(960,250)" to="(980,250)"/>
+    <wire from="(220,230)" to="(230,230)"/>
+    <wire from="(520,550)" to="(520,620)"/>
+    <wire from="(490,720)" to="(490,820)"/>
+    <wire from="(380,180)" to="(420,180)"/>
+    <wire from="(520,550)" to="(570,550)"/>
+    <wire from="(510,860)" to="(560,860)"/>
+    <wire from="(40,440)" to="(60,440)"/>
+    <wire from="(670,430)" to="(670,470)"/>
+    <wire from="(520,480)" to="(560,480)"/>
+    <wire from="(140,490)" to="(210,490)"/>
+    <wire from="(180,230)" to="(180,280)"/>
+    <wire from="(510,250)" to="(560,250)"/>
+    <wire from="(380,180)" to="(380,210)"/>
+    <wire from="(130,390)" to="(300,390)"/>
+    <wire from="(220,230)" to="(220,260)"/>
+    <wire from="(450,180)" to="(470,180)"/>
+    <wire from="(40,440)" to="(40,480)"/>
+    <wire from="(500,650)" to="(500,760)"/>
+    <wire from="(100,420)" to="(120,420)"/>
+    <wire from="(350,160)" to="(470,160)"/>
+    <wire from="(40,240)" to="(40,310)"/>
+    <wire from="(520,240)" to="(520,480)"/>
+    <wire from="(680,310)" to="(680,370)"/>
+    <wire from="(50,670)" to="(70,670)"/>
+    <wire from="(510,600)" to="(570,600)"/>
+    <wire from="(500,270)" to="(500,350)"/>
+    <wire from="(470,170)" to="(470,180)"/>
+    <wire from="(490,720)" to="(580,720)"/>
+    <wire from="(130,720)" to="(160,720)"/>
+    <wire from="(280,250)" to="(300,250)"/>
+    <wire from="(90,670)" to="(110,670)"/>
+    <wire from="(50,720)" to="(90,720)"/>
+    <wire from="(500,350)" to="(500,580)"/>
+    <wire from="(510,410)" to="(550,410)"/>
+    <wire from="(60,220)" to="(90,220)"/>
+    <wire from="(130,200)" to="(170,200)"/>
+    <wire from="(490,530)" to="(570,530)"/>
+    <wire from="(620,860)" to="(630,860)"/>
+    <wire from="(1000,260)" to="(1000,280)"/>
+    <wire from="(560,430)" to="(560,480)"/>
+    <wire from="(50,670)" to="(50,720)"/>
+    <wire from="(200,210)" to="(230,210)"/>
+    <wire from="(520,620)" to="(540,620)"/>
+    <wire from="(40,670)" to="(50,670)"/>
+    <wire from="(920,230)" to="(980,230)"/>
+    <wire from="(520,620)" to="(520,690)"/>
+    <wire from="(430,220)" to="(480,220)"/>
+    <wire from="(130,420)" to="(140,420)"/>
+    <wire from="(170,280)" to="(180,280)"/>
+    <wire from="(510,670)" to="(570,670)"/>
+    <wire from="(500,580)" to="(570,580)"/>
+    <wire from="(640,540)" to="(640,580)"/>
+    <wire from="(120,420)" to="(120,440)"/>
+    <wire from="(510,670)" to="(510,860)"/>
+    <wire from="(520,880)" to="(560,880)"/>
+    <wire from="(550,460)" to="(610,460)"/>
+    <wire from="(300,250)" to="(300,390)"/>
+    <wire from="(90,220)" to="(170,220)"/>
+    <wire from="(40,390)" to="(40,420)"/>
+    <wire from="(510,240)" to="(510,250)"/>
+    <wire from="(90,660)" to="(90,670)"/>
+    <wire from="(20,240)" to="(20,260)"/>
+    <wire from="(120,440)" to="(140,440)"/>
+    <wire from="(630,670)" to="(640,670)"/>
+    <comp lib="0" loc="(960,250)" name="Constant">
+      <a name="width" val="4"/>
+      <a name="value" val="0xa"/>
+    </comp>
+    <comp lib="6" loc="(424,282)" name="Text">
+      <a name="text" val="Top:"/>
+      <a name="font" val="SansSerif bold 26"/>
+    </comp>
+    <comp lib="6" loc="(405,744)" name="Text">
+      <a name="text" val="Upper Left:"/>
+      <a name="font" val="SansSerif bold 26"/>
+    </comp>
+    <comp lib="6" loc="(143,768)" name="Text">
+      <a name="text" val="If 0: number in the counter will stay the same"/>
+    </comp>
+    <comp lib="6" loc="(86,350)" name="Text">
+      <a name="text" val="If input is greater than 9"/>
+    </comp>
+    <comp lib="6" loc="(178,783)" name="Text">
+      <a name="text" val="If 1: will use the count pin on the counter to increment by 1"/>
+    </comp>
+    <comp lib="6" loc="(162,559)" name="Text">
+      <a name="text" val="At this point no value can be loaded after simulation"/>
+    </comp>
+    <comp lib="6" loc="(400,625)" name="Text">
+      <a name="text" val="AD + BCD + BCD"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="2" loc="(260,220)" name="Multiplexer">
+      <a name="selloc" val="tr"/>
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="6" loc="(1121,230)" name="Text">
+      <a name="text" val="Divide by 10 and send away the"/>
+    </comp>
+    <comp lib="6" loc="(120,79)" name="Text">
+      <a name="text" val="Date Created: 10/20/2014"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="3" loc="(920,230)" name="Adder">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="1" loc="(80,310)" name="NOT Gate"/>
+    <comp lib="1" loc="(660,860)" name="NOT Gate"/>
+    <comp lib="6" loc="(400,419)" name="Text">
+      <a name="text" val="A + CD + BC+ BCD"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="6" loc="(1104,247)" name="Text">
+      <a name="text" val="remainder, this gets rid of"/>
+    </comp>
+    <comp lib="6" loc="(1096,345)" name="Text">
+      <a name="text" val="the multiplexor to be loaded into the counter"/>
+    </comp>
+    <comp lib="1" loc="(610,480)" name="NOT Gate"/>
+    <comp lib="6" loc="(392,55)" name="Text">
+      <a name="text" val="Term: Fall 2014"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="0" loc="(260,180)" name="Tunnel">
+      <a name="label" val="T1"/>
+    </comp>
+    <comp lib="6" loc="(374,674)" name="Text">
+      <a name="text" val="if count pin should be used or"/>
+    </comp>
+    <comp lib="6" loc="(371,398)" name="Text">
+      <a name="text" val="_"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="1" loc="(670,580)" name="NOT Gate"/>
+    <comp lib="3" loc="(1020,240)" name="Divider">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="6" loc="(410,769)" name="Text">
+      <a name="text" val="A + B"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="1" loc="(240,670)" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="1" loc="(170,660)" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="6" loc="(739,110)" name="Text">
+      <a name="text" val="A counter is used with a clock to enter the digits 0-9 into the circuits which find which segments should be lit."/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="0" loc="(200,680)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="T1"/>
+    </comp>
+    <comp lib="0" loc="(220,260)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="4"/>
+      <a name="label" val="T2"/>
+    </comp>
+    <comp lib="6" loc="(430,149)" name="Text">
+      <a name="text" val="If increment value is 1: count is 1 and load is 0. Otherwise load is 1 and count is 0"/>
+    </comp>
+    <comp lib="6" loc="(393,32)" name="Text">
+      <a name="text" val="Class: CSC 235"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="1" loc="(170,280)" name="OR Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(280,250)" name="Clock">
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="6" loc="(883,293)" name="Text">
+      <a name="text" val="with the selected increment"/>
+    </comp>
+    <comp lib="1" loc="(630,670)" name="NAND Gate">
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="1" loc="(610,260)" name="OR Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="6" loc="(141,754)" name="Text">
+      <a name="text" val="The number selected is the increment value"/>
+    </comp>
+    <comp lib="5" loc="(680,200)" name="Hex Digit Display"/>
+    <comp lib="1" loc="(610,410)" name="NOT Gate"/>
+    <comp lib="6" loc="(89,366)" name="Text">
+      <a name="text" val="0 will be entered instead"/>
+    </comp>
+    <comp lib="6" loc="(405,594)" name="Text">
+      <a name="text" val="Bottom:"/>
+      <a name="font" val="SansSerif bold 26"/>
+    </comp>
+    <comp lib="1" loc="(650,340)" name="NAND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="6" loc="(882,309)" name="Text">
+      <a name="text" val="value (only 2 and 3 do this)"/>
+    </comp>
+    <comp lib="1" loc="(570,620)" name="NOT Gate"/>
+    <comp lib="6" loc="(288,480)" name="Text">
+      <a name="text" val="a value has been loaded."/>
+    </comp>
+    <comp lib="0" loc="(480,220)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="5" loc="(780,460)" name="7-Segment Display"/>
+    <comp lib="6" loc="(77,841)" name="Text">
+      <a name="text" val="the adder and divider"/>
+    </comp>
+    <comp lib="6" loc="(172,579)" name="Text">
+      <a name="text" val="has started. Also delays load by one tick so the original"/>
+    </comp>
+    <comp lib="1" loc="(100,480)" name="NAND Gate">
+      <a name="facing" val="west"/>
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="6" loc="(103,334)" name="Text">
+      <a name="text" val="Only values 0-9 may be added"/>
+    </comp>
+    <comp lib="6" loc="(1082,328)" name="Text">
+      <a name="text" val="Tunnel (T2) takes incremented value to"/>
+    </comp>
+    <comp lib="0" loc="(1000,280)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="4"/>
+      <a name="label" val="T2"/>
+    </comp>
+    <comp lib="6" loc="(813,160)" name="Text">
+      <a name="text" val="Displays number in decimal notation"/>
+    </comp>
+    <comp lib="1" loc="(650,470)" name="NAND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="6" loc="(101,598)" name="Text">
+      <a name="text" val="load has a chance to appear."/>
+    </comp>
+    <comp lib="6" loc="(735,132)" name="Text">
+      <a name="text" val="The counter can increment or decrement by the default value of 1 or increment by the value added by the adder."/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="6" loc="(403,876)" name="Text">
+      <a name="text" val="A + BCD"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="6" loc="(164,519)" name="Text">
+      <a name="text" val="Memory devices deactivates the load after a number"/>
+    </comp>
+    <comp lib="0" loc="(240,420)" name="Tunnel">
+      <a name="label" val="T1"/>
+    </comp>
+    <comp lib="6" loc="(372,660)" name="Text">
+      <a name="text" val="Tunnel(T3) takes value to see"/>
+    </comp>
+    <comp lib="2" loc="(200,210)" name="Multiplexer">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="1" loc="(420,180)" name="NOT Gate">
+      <a name="facing" val="west"/>
+    </comp>
+    <comp lib="1" loc="(700,410)" name="NOT Gate"/>
+    <comp lib="6" loc="(104,105)" name="Text">
+      <a name="text" val="Due Date: 10/29/2014"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="4" loc="(180,420)" name="D Flip-Flop"/>
+    <comp lib="6" loc="(909,473)" name="Text">
+      <a name="text" val="Display in new number notation"/>
+    </comp>
+    <comp lib="0" loc="(130,720)" name="Bit Extender">
+      <a name="in_width" val="2"/>
+      <a name="out_width" val="4"/>
+    </comp>
+    <comp lib="6" loc="(150,539)" name="Text">
+      <a name="text" val="has successfully been loaded into the counter."/>
+    </comp>
+    <comp lib="0" loc="(160,720)" name="Tunnel">
+      <a name="width" val="4"/>
+      <a name="label" val="T4"/>
+    </comp>
+    <comp lib="1" loc="(630,600)" name="NAND Gate">
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="0" loc="(60,200)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="1" loc="(610,350)" name="NOT Gate"/>
+    <comp lib="1" loc="(80,260)" name="NOT Gate"/>
+    <comp lib="6" loc="(410,848)" name="Text">
+      <a name="text" val="Lower Left:"/>
+      <a name="font" val="SansSerif bold 26"/>
+    </comp>
+    <comp lib="0" loc="(70,670)" name="Splitter"/>
+    <comp lib="1" loc="(770,390)" name="OR Gate">
+      <a name="size" val="70"/>
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="4" loc="(430,220)" name="Counter">
+      <a name="width" val="4"/>
+      <a name="max" val="0x9"/>
+    </comp>
+    <comp lib="1" loc="(720,600)" name="OR Gate">
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="6" loc="(226,301)" name="Text">
+      <a name="text" val="Next value to be loaded"/>
+    </comp>
+    <comp lib="1" loc="(570,650)" name="NOT Gate"/>
+    <comp lib="1" loc="(80,290)" name="NOT Gate"/>
+    <comp lib="6" loc="(897,276)" name="Text">
+      <a name="text" val="Adds current value in the counter"/>
+    </comp>
+    <comp lib="6" loc="(106,183)" name="Text">
+      <a name="text" val="value is a 4-bit number"/>
+    </comp>
+    <comp lib="0" loc="(60,220)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="4" loc="(100,420)" name="D Flip-Flop"/>
+    <comp lib="1" loc="(140,670)" name="NOT Gate"/>
+    <comp lib="0" loc="(40,670)" name="Pin">
+      <a name="width" val="2"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="6" loc="(411,391)" name="Text">
+      <a name="text" val="Center:"/>
+      <a name="font" val="SansSerif bold 26"/>
+    </comp>
+    <comp lib="6" loc="(787,181)" name="Text">
+      <a name="text" val="*Numbers restricted to 0-9*"/>
+    </comp>
+    <comp lib="6" loc="(121,30)" name="Text">
+      <a name="text" val="Author: Christian Carreras"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="1" loc="(670,410)" name="NAND Gate">
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="1" loc="(110,300)" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="6" loc="(722,88)" name="Text">
+      <a name="text" val="Purpose: Displays the values 0-9 on a 7 segment device that lights up certain segments depending on the number."/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="6" loc="(421,304)" name="Text">
+      <a name="text" val="A + B + C +D"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="6" loc="(438,604)" name="Text">
+      <a name="text" val="_"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="1" loc="(670,620)" name="NOT Gate"/>
+    <comp lib="0" loc="(180,470)" name="Constant">
+      <a name="facing" val="west"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="1" loc="(610,540)" name="NAND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="6" loc="(164,827)" name="Text">
+      <a name="text" val="Also extends the 2-bit value to a 4-bit value to send to"/>
+    </comp>
+    <comp lib="0" loc="(130,200)" name="Constant">
+      <a name="width" val="4"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="6" loc="(363,690)" name="Text">
+      <a name="text" val="if the load should be used"/>
+    </comp>
+    <comp lib="0" loc="(260,670)" name="Tunnel">
+      <a name="label" val="T3"/>
+    </comp>
+    <comp lib="6" loc="(205,799)" name="Text">
+      <a name="text" val="If 2: will take the current value and increment by 2 via adder &amp; divider"/>
+    </comp>
+    <comp lib="6" loc="(102,54)" name="Text">
+      <a name="text" val="File: csc235_project3"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="0" loc="(840,240)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="4"/>
+      <a name="label" val="T4"/>
+    </comp>
+    <comp lib="1" loc="(670,600)" name="NOT Gate"/>
+    <comp lib="1" loc="(620,860)" name="NAND Gate">
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="6" loc="(112,170)" name="Text">
+      <a name="text" val="Choose value to be added to counter"/>
+    </comp>
+    <comp lib="6" loc="(460,397)" name="Text">
+      <a name="text" val="_"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="6" loc="(964,490)" name="Text">
+      <a name="text" val="segment combinations correlate to certain numbers"/>
+    </comp>
+    <comp lib="6" loc="(152,813)" name="Text">
+      <a name="text" val="If 3: same as 2 but with 3 as the increment value"/>
+    </comp>
+    <comp lib="1" loc="(700,390)" name="NOT Gate"/>
+    <comp lib="6" loc="(322,452)" name="Text">
+      <a name="text" val="Tunnel(T1) will take delayed value to a"/>
+    </comp>
+    <comp lib="6" loc="(404,604)" name="Text">
+      <a name="text" val="_"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="6" loc="(315,718)" name="Text">
+      <a name="text" val="Tunnel(T4) takes increment value to the adder"/>
+    </comp>
+    <comp lib="0" loc="(500,170)" name="Tunnel">
+      <a name="label" val="T3"/>
+    </comp>
+    <comp lib="1" loc="(700,430)" name="NOT Gate"/>
+    <comp lib="1" loc="(710,840)" name="OR Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="6" loc="(1084,264)" name="Text">
+      <a name="text" val="overflow problems"/>
+    </comp>
+    <comp lib="6" loc="(75,639)" name="Text">
+      <a name="text" val="Select a 2-bit number"/>
+    </comp>
+    <comp lib="6" loc="(325,466)" name="Text">
+      <a name="text" val="multiplexor to select the next value after"/>
+    </comp>
+    <comp lib="1" loc="(630,740)" name="OR Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+  </circuit>
+</project>

@@ -1,0 +1,8 @@
+/* This is my test css file */
+em{font-weight:bold;color:black}
+h1{font-family:tahoma, helvetica, sans-serif}
+p{font-size: 15pt;font-family:arial, sans-serif}
+body {background-image: url(Images/ku.jpg); background-repeat: no-repeat;
+	background-attachment:fixed; background-position: top;
+	background-color: #880088}
+.special{color:#6666ff}

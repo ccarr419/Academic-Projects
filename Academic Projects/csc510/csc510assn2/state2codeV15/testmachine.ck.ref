@@ -1,0 +1,101 @@
+// template.ck.txt -- template for generating ChucK code voa
+// State2ChuckMidi.py. See State2ChuckMidi.py and State2CodeParser.py.
+// D. Parson fall 2013.
+// run "chuck --probe" to find the MIDI ports. On my machine it shows this:
+// [chuck]: ------( chuck -- 4 MIDI inputs )------
+// [chuck]:     [0] : "IAC Driver Bus 1"
+// [chuck]:     [1] : "IAC Driver "
+// [chuck]:     [2] : "UA-101"
+// [chuck]:     [3] : "USB Trigger Finger"
+// [chuck]: 
+// [chuck]: ------( chuck -- 4 MIDI outputs )-----
+// [chuck]:     [0] : "IAC Driver Bus 1"
+// [chuck]:     [1] : "IAC Driver "
+// [chuck]:     [2] : "UA-101"
+// [chuck]:     [3] : "USB Trigger Finger"
+//
+// Now to run the Trigger finger as input and IAC Driver as output (perhaps
+// connected to Ableton Live), this would be the command line:
+//              chuck testmidi.ck:3:1
+// giving MIDI device 3 as input and 1 as output of this Chuck script.
+
+MidiIn min ;
+MidiOut mout ;
+MidiMsg msg ;
+int stateIndex ;
+int oldIndex ;
+
+Std.atoi(me.arg(0)) => int midiinnum ;
+Std.atoi(me.arg(1)) => int midioutnum ;
+
+if (!min.open(midiinnum)) {
+    <<< "Cannot open input", me.arg(0) >>>;
+    me.exit();
+}
+
+if (!mout.open(midioutnum)) {
+    <<< "Cannot open input", me.arg(1) >>>;
+    me.exit();
+}
+
+fun void emit(MidiMsg emitter) {
+    mout.send(emitter);
+}
+
+fun void mainloop() {
+    stateIndex => oldIndex ;
+    while (true) {
+        min => now ;
+        while (min.recv(msg)) {
+            midiTranslator(msg);
+            if (stateIndex != oldIndex) {
+                stateIndex => oldIndex ;
+            }
+        }
+    }
+}
+
+
+1 => int a;
+2.3 => float b;
+string stateName[3];
+"s3" => stateName[0];
+"s2" => stateName[1];
+"s1" => stateName[2];
+2 => stateIndex ;
+fun void midiTranslator(MidiMsg msgin) {
+    MidiMsg msgout;
+    msgin.data1 => msgout.data1 ;
+    msgin.data2 => msgout.data2 ;
+    msgin.data3 => msgout.data3 ;
+    if (stateIndex == 0) {
+        if (2) {
+            1=>msgout.data1;
+            0 => stateIndex ;
+        }
+    } else if (stateIndex == 1) {
+        if (1) {
+            0 => stateIndex ;
+        } else if (msgin.data1>100) {
+            msgin.data1+2=>msgout.data1;
+            emit(msgout);
+            1 => stateIndex ;
+        }
+    } else if (stateIndex == 2) {
+        if (msgin.data1==176) {
+            176=>msgout.data1;
+            emit(msgout);
+            1 => stateIndex ;
+        } else if (1) {
+            0=>msgout.data1;
+            0 => stateIndex ;
+        } else if (0) {
+            2 => stateIndex ;
+        }
+    }
+    if (stateIndex != oldIndex) {
+        <<< "Enter state index", stateIndex, stateName[stateIndex] >>>;
+    }
+}
+<<< "Start in state index", stateIndex, stateName[stateIndex] >>>;
+mainloop();

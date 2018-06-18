@@ -1,0 +1,10 @@
+program program1
+dec;
+int1, int2, int3 : int;
+int4 : int;
+gg77 : real
+begin
+	Read(int1,int2,int3,int4);
+	gg77=((int1+int2)*int3)/int4;
+	Write(gg77,int1)
+end.

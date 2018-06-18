@@ -1,0 +1,210 @@
+150c150
+<                             exec('fork()',globals,locals)
+---
+>                             exec(__codeTable__[0],globals,locals)
+165,168c165,168
+<                             exec('msg("post-fork pid " + str(pid) + " tid " + str(tid))',globals,locals)
+<                             exec('msg("post-fork test of local vars a " + str(a)             + " b " + str(b) + " c " + c)',globals,locals)
+<                             exec("assign('a', -12345)",globals,locals)
+<                             exec('msg("post-assign test of local var a " + str(a))',globals,locals)
+---
+>                             exec(__codeTable__[1],globals,locals)
+>                             exec(__codeTable__[2],globals,locals)
+>                             exec(__codeTable__[3],globals,locals)
+>                             exec(__codeTable__[4],globals,locals)
+340c340
+<                             if eval('meals == 1',globals,locals):
+---
+>                             if eval(__codeTable__[5],globals,locals):
+342,343c342,343
+<                                 exec('meals -= 1',globals,locals)
+<                                 exec('trigger(1, "eat")',globals,locals)
+---
+>                                 exec(__codeTable__[6],globals,locals)
+>                                 exec(__codeTable__[7],globals,locals)
+348c348
+<                             if eval('meals > 1',globals,locals):
+---
+>                             if eval(__codeTable__[8],globals,locals):
+352,353c352,353
+<                                 exec('meals -= 1',globals,locals)
+<                                 exec('trigger(1, "eat")',globals,locals)
+---
+>                                 exec(__codeTable__[9],globals,locals)
+>                                 exec(__codeTable__[10],globals,locals)
+359c359
+<                             if eval('meals == 0',globals,locals):
+---
+>                             if eval(__codeTable__[11],globals,locals):
+363,379c363,379
+<                                 exec('negator = lambda x : -x',globals,locals)
+<                                 exec('q = Queue(ispriority=True)',globals,locals)
+<                                 exec('[q.enq(i, i) for i in range(1,10)]',globals,locals)
+<                                 exec('[msg("Q [" + str(i) + "] = " + str(q.deq())) for i in range(1,10)]',globals,locals)
+<                                 exec('[q.enq(i, i) for i in range(1,10)]',globals,locals)
+<                                 exec('q.age(negator)',globals,locals)
+<                                 exec('[msg("Q [" + str(i) + "] = " + str(q.deq())) for i in range(1,10)]',globals,locals)
+<                                 exec('for i in range(11,100,10): q.enq(i, i)',globals,locals)
+<                                 exec('q.age(functools.partial(operator.mul,.25))',globals,locals)
+<                                 exec('for i in range(1,10): msg("Q [" + str(i) + "] = " + str(q.deq()))',globals,locals)
+<                                 exec('for i in range(11,100,10): q.enq(i, i)',globals,locals)
+<                                 exec('q.age(functools.partial(operator.mul,-.25))',globals,locals)
+<                                 exec('for v in q.gen(isDestructive=False): msg("Q GEN: " + str(v))',globals,locals)
+<                                 exec('for v in q.gen(isDestructive=True): msg("Q GEN: " + str(v))',globals,locals)
+<                                 exec('for v in q.gen(isDestructive=False): msg("Q GEN: " + str(v))',globals,locals)
+<                                 exec('for v in q.gen(isDestructive=True): msg("Q GEN: " + str(v))',globals,locals)
+<                                 exec('msg("good night")',globals,locals)
+---
+>                                 exec(__codeTable__[12],globals,locals)
+>                                 exec(__codeTable__[13],globals,locals)
+>                                 exec(__codeTable__[14],globals,locals)
+>                                 exec(__codeTable__[15],globals,locals)
+>                                 exec(__codeTable__[16],globals,locals)
+>                                 exec(__codeTable__[17],globals,locals)
+>                                 exec(__codeTable__[18],globals,locals)
+>                                 exec(__codeTable__[19],globals,locals)
+>                                 exec(__codeTable__[20],globals,locals)
+>                                 exec(__codeTable__[21],globals,locals)
+>                                 exec(__codeTable__[22],globals,locals)
+>                                 exec(__codeTable__[23],globals,locals)
+>                                 exec(__codeTable__[24],globals,locals)
+>                                 exec(__codeTable__[25],globals,locals)
+>                                 exec(__codeTable__[26],globals,locals)
+>                                 exec(__codeTable__[27],globals,locals)
+>                                 exec(__codeTable__[28],globals,locals)
+388c388
+<                             if eval('meals > 0',globals,locals):
+---
+>                             if eval(__codeTable__[29],globals,locals):
+390,391c390,391
+<                                 exec('meals -= 1',globals,locals)
+<                                 exec('trigger(1, "eat")',globals,locals)
+---
+>                                 exec(__codeTable__[30],globals,locals)
+>                                 exec(__codeTable__[31],globals,locals)
+396c396
+<                             if eval('meals == 0',globals,locals):
+---
+>                             if eval(__codeTable__[32],globals,locals):
+400,402c400,402
+<                                 exec('meals = 3000000',globals,locals)
+<                                 exec('msg("snack consists of " + str(meals) + " meals")',globals,locals)
+<                                 exec('trigger(1, "eat")',globals,locals)
+---
+>                                 exec(__codeTable__[33],globals,locals)
+>                                 exec(__codeTable__[34],globals,locals)
+>                                 exec(__codeTable__[35],globals,locals)
+412c412
+<                             if eval('meals > 0',globals,locals):
+---
+>                             if eval(__codeTable__[36],globals,locals):
+414,415c414,415
+<                                 exec('meals -= 1',globals,locals)
+<                                 exec('trigger(1, "eat")',globals,locals)
+---
+>                                 exec(__codeTable__[37],globals,locals)
+>                                 exec(__codeTable__[38],globals,locals)
+420c420
+<                             if eval('meals == 0',globals,locals):
+---
+>                             if eval(__codeTable__[39],globals,locals):
+424,426c424,426
+<                                 exec('meals = 3000000',globals,locals)
+<                                 exec('msg("dinner consists of " + str(meals) + " meals")',globals,locals)
+<                                 exec('trigger(1, "eat")',globals,locals)
+---
+>                                 exec(__codeTable__[40],globals,locals)
+>                                 exec(__codeTable__[41],globals,locals)
+>                                 exec(__codeTable__[42],globals,locals)
+439,441c439,441
+<                             exec('meals = 3000000',globals,locals)
+<                             exec('msg("breakfast consists of " + str(meals) + " meals")',globals,locals)
+<                             exec('trigger(1, "eat")',globals,locals)
+---
+>                             exec(__codeTable__[43],globals,locals)
+>                             exec(__codeTable__[44],globals,locals)
+>                             exec(__codeTable__[45],globals,locals)
+454c454
+<                             exec('trigger(1, "eat")',globals,locals)
+---
+>                             exec(__codeTable__[46],globals,locals)
+464c464
+<                             if eval('meals > 0',globals,locals):
+---
+>                             if eval(__codeTable__[47],globals,locals):
+466,467c466,467
+<                                 exec('meals -= 1',globals,locals)
+<                                 exec('trigger(1, "eat")',globals,locals)
+---
+>                                 exec(__codeTable__[48],globals,locals)
+>                                 exec(__codeTable__[49],globals,locals)
+472c472
+<                             if eval('meals == 0',globals,locals):
+---
+>                             if eval(__codeTable__[50],globals,locals):
+476,478c476,478
+<                                 exec('meals = 3000000',globals,locals)
+<                                 exec('msg("lunch consists of " + str(meals) + " meals")',globals,locals)
+<                                 exec('trigger(1, "eat")',globals,locals)
+---
+>                                 exec(__codeTable__[51],globals,locals)
+>                                 exec(__codeTable__[52],globals,locals)
+>                                 exec(__codeTable__[53],globals,locals)
+639a640,696
+> __codeTable__ = [
+>     compile('fork()','nofile','exec'),
+>     compile('msg("post-fork pid " + str(pid) + " tid " + str(tid))','nofile','exec'),
+>     compile('msg("post-fork test of local vars a " + str(a)             + " b " + str(b) + " c " + c)','nofile','exec'),
+>     compile("assign('a', -12345)",'nofile','exec'),
+>     compile('msg("post-assign test of local var a " + str(a))','nofile','exec'),
+>     compile('meals == 1','nofile','eval'),
+>     compile('meals -= 1','nofile','exec'),
+>     compile('trigger(1, "eat")','nofile','exec'),
+>     compile('meals > 1','nofile','eval'),
+>     compile('meals -= 1','nofile','exec'),
+>     compile('trigger(1, "eat")','nofile','exec'),
+>     compile('meals == 0','nofile','eval'),
+>     compile('negator = lambda x : -x','nofile','exec'),
+>     compile('q = Queue(ispriority=True)','nofile','exec'),
+>     compile('[q.enq(i, i) for i in range(1,10)]','nofile','exec'),
+>     compile('[msg("Q [" + str(i) + "] = " + str(q.deq())) for i in range(1,10)]','nofile','exec'),
+>     compile('[q.enq(i, i) for i in range(1,10)]','nofile','exec'),
+>     compile('q.age(negator)','nofile','exec'),
+>     compile('[msg("Q [" + str(i) + "] = " + str(q.deq())) for i in range(1,10)]','nofile','exec'),
+>     compile('for i in range(11,100,10): q.enq(i, i)','nofile','exec'),
+>     compile('q.age(functools.partial(operator.mul,.25))','nofile','exec'),
+>     compile('for i in range(1,10): msg("Q [" + str(i) + "] = " + str(q.deq()))','nofile','exec'),
+>     compile('for i in range(11,100,10): q.enq(i, i)','nofile','exec'),
+>     compile('q.age(functools.partial(operator.mul,-.25))','nofile','exec'),
+>     compile('for v in q.gen(isDestructive=False): msg("Q GEN: " + str(v))','nofile','exec'),
+>     compile('for v in q.gen(isDestructive=True): msg("Q GEN: " + str(v))','nofile','exec'),
+>     compile('for v in q.gen(isDestructive=False): msg("Q GEN: " + str(v))','nofile','exec'),
+>     compile('for v in q.gen(isDestructive=True): msg("Q GEN: " + str(v))','nofile','exec'),
+>     compile('msg("good night")','nofile','exec'),
+>     compile('meals > 0','nofile','eval'),
+>     compile('meals -= 1','nofile','exec'),
+>     compile('trigger(1, "eat")','nofile','exec'),
+>     compile('meals == 0','nofile','eval'),
+>     compile('meals = 3000000','nofile','exec'),
+>     compile('msg("snack consists of " + str(meals) + " meals")','nofile','exec'),
+>     compile('trigger(1, "eat")','nofile','exec'),
+>     compile('meals > 0','nofile','eval'),
+>     compile('meals -= 1','nofile','exec'),
+>     compile('trigger(1, "eat")','nofile','exec'),
+>     compile('meals == 0','nofile','eval'),
+>     compile('meals = 3000000','nofile','exec'),
+>     compile('msg("dinner consists of " + str(meals) + " meals")','nofile','exec'),
+>     compile('trigger(1, "eat")','nofile','exec'),
+>     compile('meals = 3000000','nofile','exec'),
+>     compile('msg("breakfast consists of " + str(meals) + " meals")','nofile','exec'),
+>     compile('trigger(1, "eat")','nofile','exec'),
+>     compile('trigger(1, "eat")','nofile','exec'),
+>     compile('meals > 0','nofile','eval'),
+>     compile('meals -= 1','nofile','exec'),
+>     compile('trigger(1, "eat")','nofile','exec'),
+>     compile('meals == 0','nofile','eval'),
+>     compile('meals = 3000000','nofile','exec'),
+>     compile('msg("lunch consists of " + str(meals) + " meals")','nofile','exec'),
+>     compile('trigger(1, "eat")','nofile','exec'),
+>     None
+> ]

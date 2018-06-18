@@ -1,0 +1,118 @@
+000000000000,LOG,processor 0,init,init
+000000000000,LOG,processor 0,init,APPROACH
+000000000000,LOG,processor 0,init,ARRIVE
+000000000000,LOG,processor 0,init,DEPART
+000000000000,LOG,processor 0,afterstart,APPROACH
+000000000000,LOG,thread 0 process 0,init,init
+000000000000,LOG,processor 0,afterstart,fork
+000000000000,LOG,processor 0,afterstart,ARRIVE
+000000000001,LOG,thread 0 process 0,init,APPROACH
+000000000001,LOG,thread 0 process 0,init,ARRIVE
+000000000001,LOG,thread 0 process 0,init,DEPART
+000000000001,LOG,thread 0 process 0,breakfast,APPROACH
+000000000001,MSG,thread 0 process 0,breakfast consists of 1 meals
+000000000001,LOG,thread 0 process 0,breakfast,eat
+000000000001,LOG,thread 0 process 0,breakfast,ARRIVE
+000000000001,LOG,processor 0,afterstart,DEPART
+000000000001,LOG,processor 0,alldone,APPROACH
+000000000001,MSG,processor 0,post-fork pid 0 tid 0
+000000000001,MSG,processor 0,post-fork test of local vars a 1 b 2.3 c a string 
+000000000001,MSG,processor 0,post-assign test of local var a -12345
+000000000001,LOG,processor 0,alldone,ARRIVE
+000000000001,LOG,processor 0,alldone,DEPART
+000000000001,LOG,processor 0,<defunct>,?
+000000000002,LOG,thread 0 process 0,breakfast,REPEAT
+000000000002,LOG,thread 0 process 0,breakfast,eat
+000000000003,LOG,thread 0 process 0,breakfast,DEPART
+000000000003,LOG,thread 0 process 0,lunch,APPROACH
+000000000003,MSG,thread 0 process 0,lunch consists of 3 meals
+000000000003,LOG,thread 0 process 0,lunch,eat
+000000000003,LOG,thread 0 process 0,lunch,ARRIVE
+000000000004,LOG,thread 0 process 0,lunch,REPEAT
+000000000004,LOG,thread 0 process 0,lunch,eat
+000000000005,LOG,thread 0 process 0,lunch,REPEAT
+000000000005,LOG,thread 0 process 0,lunch,eat
+000000000006,LOG,thread 0 process 0,lunch,REPEAT
+000000000006,LOG,thread 0 process 0,lunch,eat
+000000000007,LOG,thread 0 process 0,lunch,DEPART
+000000000007,LOG,thread 0 process 0,dinner,APPROACH
+000000000007,MSG,thread 0 process 0,dinner consists of 1 meals
+000000000007,LOG,thread 0 process 0,dinner,eat
+000000000007,LOG,thread 0 process 0,dinner,ARRIVE
+000000000008,LOG,thread 0 process 0,dinner,REPEAT
+000000000008,LOG,thread 0 process 0,dinner,eat
+000000000009,LOG,thread 0 process 0,dinner,DEPART
+000000000009,LOG,thread 0 process 0,snack,APPROACH
+000000000009,MSG,thread 0 process 0,snack consists of 3 meals
+000000000009,LOG,thread 0 process 0,snack,eat
+000000000009,LOG,thread 0 process 0,snack,ARRIVE
+000000000010,LOG,thread 0 process 0,snack,DEPART
+000000000010,LOG,thread 0 process 0,acidreflux,APPROACH
+000000000010,LOG,thread 0 process 0,acidreflux,eat
+000000000010,LOG,thread 0 process 0,acidreflux,ARRIVE
+000000000011,LOG,thread 0 process 0,acidreflux,DEPART
+000000000011,LOG,thread 0 process 0,snack,APPROACH
+000000000011,LOG,thread 0 process 0,snack,eat
+000000000011,LOG,thread 0 process 0,snack,ARRIVE
+000000000012,LOG,thread 0 process 0,snack,DEPART
+000000000012,LOG,thread 0 process 0,acidreflux,APPROACH
+000000000012,LOG,thread 0 process 0,acidreflux,eat
+000000000012,LOG,thread 0 process 0,acidreflux,ARRIVE
+000000000013,LOG,thread 0 process 0,acidreflux,DEPART
+000000000013,LOG,thread 0 process 0,snack,APPROACH
+000000000013,LOG,thread 0 process 0,snack,eat
+000000000013,LOG,thread 0 process 0,snack,ARRIVE
+000000000014,LOG,thread 0 process 0,snack,REPEAT
+000000000014,LOG,thread 0 process 0,snack,eat
+000000000015,LOG,thread 0 process 0,snack,DEPART
+000000000015,LOG,thread 0 process 0,gnight,APPROACH
+000000000015,MSG,thread 0 process 0,Q [1] = 1
+000000000015,MSG,thread 0 process 0,Q [2] = 2
+000000000015,MSG,thread 0 process 0,Q [3] = 3
+000000000015,MSG,thread 0 process 0,Q [4] = 4
+000000000015,MSG,thread 0 process 0,Q [5] = 5
+000000000015,MSG,thread 0 process 0,Q [6] = 6
+000000000015,MSG,thread 0 process 0,Q [7] = 7
+000000000015,MSG,thread 0 process 0,Q [8] = 8
+000000000015,MSG,thread 0 process 0,Q [9] = 9
+000000000015,MSG,thread 0 process 0,Q [1] = 9
+000000000015,MSG,thread 0 process 0,Q [2] = 8
+000000000015,MSG,thread 0 process 0,Q [3] = 7
+000000000015,MSG,thread 0 process 0,Q [4] = 6
+000000000015,MSG,thread 0 process 0,Q [5] = 5
+000000000015,MSG,thread 0 process 0,Q [6] = 4
+000000000015,MSG,thread 0 process 0,Q [7] = 3
+000000000015,MSG,thread 0 process 0,Q [8] = 2
+000000000015,MSG,thread 0 process 0,Q [9] = 1
+000000000015,MSG,thread 0 process 0,Q [1] = 11
+000000000015,MSG,thread 0 process 0,Q [2] = 21
+000000000015,MSG,thread 0 process 0,Q [3] = 31
+000000000015,MSG,thread 0 process 0,Q [4] = 41
+000000000015,MSG,thread 0 process 0,Q [5] = 51
+000000000015,MSG,thread 0 process 0,Q [6] = 61
+000000000015,MSG,thread 0 process 0,Q [7] = 71
+000000000015,MSG,thread 0 process 0,Q [8] = 81
+000000000015,MSG,thread 0 process 0,Q [9] = 91
+000000000015,MSG,thread 0 process 0,Q GEN: 91
+000000000015,MSG,thread 0 process 0,Q GEN: 81
+000000000015,MSG,thread 0 process 0,Q GEN: 71
+000000000015,MSG,thread 0 process 0,Q GEN: 61
+000000000015,MSG,thread 0 process 0,Q GEN: 51
+000000000015,MSG,thread 0 process 0,Q GEN: 41
+000000000015,MSG,thread 0 process 0,Q GEN: 31
+000000000015,MSG,thread 0 process 0,Q GEN: 21
+000000000015,MSG,thread 0 process 0,Q GEN: 11
+000000000015,MSG,thread 0 process 0,Q GEN: 91
+000000000015,MSG,thread 0 process 0,Q GEN: 81
+000000000015,MSG,thread 0 process 0,Q GEN: 71
+000000000015,MSG,thread 0 process 0,Q GEN: 61
+000000000015,MSG,thread 0 process 0,Q GEN: 51
+000000000015,MSG,thread 0 process 0,Q GEN: 41
+000000000015,MSG,thread 0 process 0,Q GEN: 31
+000000000015,MSG,thread 0 process 0,Q GEN: 21
+000000000015,MSG,thread 0 process 0,Q GEN: 11
+000000000015,MSG,thread 0 process 0,good night
+000000000015,LOG,thread 0 process 0,gnight,ARRIVE
+000000000015,LOG,thread 0 process 0,gnight,DEPART
+000000000015,LOG,thread 0 process 0,<defunct>,?
+000000000015,MSG,scheduler,Scheduler exiting at time 15 within time limit 100, simulation has finished.

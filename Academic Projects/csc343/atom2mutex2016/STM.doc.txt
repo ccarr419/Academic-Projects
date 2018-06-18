@@ -1,0 +1,176 @@
+class processor(state2codeV10.CSC343Sim._Processor_)
+ |  fork()
+ |      *fork() : (processID, threadID): starts a new process and its initial
+ |          thread and terminal, storing the pid in child[] and {pid : PCB}
+ |          map, where PCB is a reference to a PCB object.
+ |  
+ |  idle(ticks)
+ |      *idle(ticks): delays the _Processor_ *ticks* ticks, useful for fork()ing
+ |          processes at temporal intervals in the simulation.
+ |  
+ |  msg(message)
+ |      Log text message from user code to log file.
+ |  
+ |  time()
+ |      time() : int returns the current, global simulation time in ticks.
+ |  
+ |  trigger(ticks, event, *args)
+ |      *trigger(ticks, event, *args) : (args ...) stalls the _Processor_
+ |          for *ticks* ticks, and then delivers the named *event" to the
+ |          _Processor_ object with the *args* tuple as arguments.
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from state2codeV10.CSC343Sim.__scheduledObject__:
+ |  
+ |  sample(lower, upper, distType, *parameters)
+ |      Return an integer in the inclusive range [lower, upper] where
+ |      lower and upper are integers, and distType and parameters covary
+ |      as follows.
+ |      distType = 'uniform' gives a uniform distribution in the range
+ |          [lower, upper] with parameters ignored.
+ |      distType = 'gaussian' gives a gaussian distribution in the range
+ |          [lower, upper] with parameters (mu, sigma) where mu is
+ |          an int or float withing the range [lower, upper] that is the
+ |          distribution mean, and sigma is the standard deviation. Results
+ |          outside the range are discarded until a valid value
+ |          is found and returned.
+ |      distType = 'exponential' gives a exponential distribution in the range
+ |          [lower, upper] with parameter (mu,) where mu is
+ |          an int or float withing the range [lower, upper] that is
+ |          the mean; the closer it is to lower, the steeper the dropoff.
+ |          Results outside the range are discarded until a valid value
+ |          is found and returned.
+ |      distType = 'revexponential' gives a reverse exponential distribution
+ |          in the range [lower, upper] that grows towards upper, with
+ |          parameter (mu,) where mu is an int or float withing the range
+ |          [lower, upper] that is the mean; the closer it is to upper,
+ |          the steeper the rise.
+ |          Results outside the range are discarded until a valid value
+ |          is found and returned.
+ |  
+ |  waitForEvent(eventType, isexclusive)
+ |      *waitForEvent(eventType, isexclusive) is the mechanism for waiting for an
+ |          eventType delivered by another thread in the simulation, which is delivered
+ |          by another thread calling waitingobj.signalEvent(eventType), with the
+ |          waitingobj simobj as the object parameter. Parameter isexclusive, if True, means
+ |          respond only to that eventType; when False, respond to the arrival of any event.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods inherited from state2codeV10.CSC343Sim.__scheduledObject__:
+ |  noop()
+ |      noop() does nothing and returns None, it is useful as a
+ |      default else in a conditional expression when no else value
+ |      is needed.
+ |  
+ |  signalEvent(waitingobj, eventType, result=None)
+ |      signalEvent(waitingobj, eventType, result) signals the waitingobj waiting within
+ |          waitForEvent with the eventType and result value. See waitForEvent.
+ |  ----------------------------------------------------------------------
+
+Help on class thread in module Human1STM:
+
+class thread(state2codeV10.CSC343Sim._Thread_)
+ |  Methods inherited from state2codeV10.CSC343Sim._Thread_:
+ |  cpu(ticks)
+ |      *cpu(ticks) requests ticks on a _Processor_ context.
+ |  
+ |  fork()
+ |      *fork() : (pid, threadid) starts the initial thread and terminal of a
+ |          new child process, storing the pid in child[] and
+ |          {pid : PCB} in processor.pcb, where PCB is a reference to
+ |          a PCB object.
+ |  
+ |  getid()
+ |      getid() : (machineid, processid, threadid) returns the 
+ |         (_Processor_.number, processNumber, threadNumber) of this thread.
+ |  
+ |  io(index)
+ |      *io(index) requests I/O on fastio[index] or on terminal for index==-1.
+ |  
+ |  msg(message)
+ |      Log text message from user code to log file.
+ |  
+ |  sleep(ticks)
+ |      *sleep(ticks): delays the _Thread_ *ticks* ticks.
+ |  
+ |  spawn()
+ |      *spawn() : threadid starts another thread of the current process,
+ |          updating this process' PCB.
+ |  
+ |  time()
+ |      time() : int returns the current, global simulation time in ticks.
+ |  
+ |  trigger(ticks, event, *args)
+ |      *trigger(ticks, event, (args...)) : (args ...) stalls the _Thread_
+ |          for *ticks* ticks, and then delivers the named *event" to the
+ |          _Thread_ object with the *args* tuple as arguments.
+ |  
+ |  yieldcpu()
+ |      *yieldcpu delays the _Thread_ 0 ticks, giving another thread
+ |      a chance to run in the simulation.
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from state2codeV10.CSC343Sim.__scheduledObject__:
+ |  
+ |  sample(lower, upper, distType, *parameters) (SEE sample docs above.)
+ |  
+ |  waitForEvent(eventType, isexclusive) (SEE waitForEvent above.)
+ |  ----------------------------------------------------------------------
+ |  Static methods inherited from state2codeV10.CSC343Sim.__scheduledObject__:
+ |  noop()  (SEE noop above.)
+ |  
+ |  signalEvent(waitingobj, eventType, result=None) (SEE signalEvent above.)
+ |  ----------------------------------------------------------------------
+
+Help on class Queue in module state2codeV10.CSC343Sim:
+
+class Queue(__builtin__.object)
+ |  Queue can be either a FIFO queue or a min-priority queue implemented
+ |  using library package heapq. Its FIFO versus min-priority queue is
+ |  set when it is constructed.
+ |  
+ |  Methods defined here:
+ |  
+ |  __init__(ispriority)
+ |      Construct a Queue, as a FIFO Queue if parameter ispriority is
+ |      False (default), else construct a priority Queue using a min
+ |      heap, i.e., where the enqueued entry with the smallest priority
+ |      value has the highest priority.
+ |  
+ |  delete(handle)
+ |      Delete a previously enqueued value from the queue, where handle
+ |      is a value previously returned by enq. This method throws an
+ |      exception if the handle is no longer in this queue.
+ |      This method applies to a FIFO or priority queue.
+ |      RETURN value is the old, enqueued object value.
+ |  
+ |  deq()
+ |      deq() : obj dequeues and returns the obj at the front of the Queue.
+ |  
+ |  enq(obj, priority=None)
+ |      enq(obj, priority) enqueues the object pointed to by
+ |          obj into this Queue, where priority must be None (default) for a
+ |          FIFO queue, and must be any non-None value that can
+ |          be compared in sort order to other priority values.
+ |          The priority is typically a number, but it can be a tuple
+ |          for numbers, for example, in the order:
+ |          (mostSignificantKey, ... , leastSignificantKey).
+ |          This is a min-queue, so use the "-" minus sign if
+ |          necessary when a lrage value is the higher priority.
+ |          RETURN value is an opaque handle that a client can pass
+ |          to reprioritize() to change this obj's priority or to
+ |          delete() to delete this entry from the queue.
+ |  
+ |  len()
+ |      Returns the number of elements in this queue, >= 0.
+ |  
+ |  peek()
+ |      peek() : obj, returns the obj at the front of the queue without
+ |          removing it from the queue.
+ |  
+ |  reprioritize(handle, priority)
+ |      Change the priority of a previously enqueued value to the
+ |      priority parameter's value, where handle is a value previously
+ |      returned by enq. This method throws an exception if
+ |      this is a FIFO queue, or if the handle is no longer in this queue,
+ |      or if priority is invalid according to the documentation for enq().
+ |      RETURN value is the new handle; the previous one is no
+ |      longer valid after this call.

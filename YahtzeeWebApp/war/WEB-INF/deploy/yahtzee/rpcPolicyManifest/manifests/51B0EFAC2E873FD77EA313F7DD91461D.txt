@@ -1,0 +1,2 @@
+serviceClass: com.yahtzee.client.GreetingService
+path: D6BD36DE9115F298CB7F86CA6ECDF91B.gwt.rpc

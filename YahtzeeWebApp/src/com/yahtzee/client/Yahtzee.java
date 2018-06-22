@@ -297,13 +297,22 @@ public class Yahtzee implements EntryPoint {
                 "_blank", "");
             }
         });
+        Button resetB = new Button("Reset Server", new ClickHandler() {
+            public void onClick(ClickEvent event) {
+                if(Window.confirm("Are you sure you want to reset the server?")) {
+                    gServ.quitGame();
+                }
+            }
+        });
         //Place all the widgets in the RootPanel a.k.a. the webpage
         rollB.setWidth("150px");
         helpB.setWidth("150px");
+        resetB.setWidth("150px");
         soundB.setPixelSize(24,24);
         RootPanel.get("GameContainer").add(gameGrid);
         RootPanel.get("RollContainer").add(rollB);
         RootPanel.get("HelpContainer").add(helpB);
+        RootPanel.get("ResetContainer").add(resetB);
         RootPanel.get("CategoryContainer").add(createCatGrid());
         RootPanel.get("ScoreContainer").add(tp);
         RootPanel.get("MuteContainer").add(soundB);

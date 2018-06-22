@@ -11,6 +11,9 @@
 * JavaDocs Link:
 * http://csitrd.kutztown.edu/~ccarr419/csc421/assignment5/
 *
+* Demo Link:
+* http://main-yahtzee.7e14.starter-us-west-2.openshiftapps.com/
+*
 * - - - - - - - - - - MY DESIGN CHOICES - - - - - - - - - -
 *
 *   For this project I made a GWT application through a

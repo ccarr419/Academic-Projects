@@ -3,4 +3,4 @@ Most projects were planned, written and managed from beginning to completion by 
 *A higher course number generally represents a more recent and difficult course/project
 *Course numbers < 400 represent undergrad courses, course numbers >= 400 represent grad courses
 
-Solutions written for the KU programming team as well as code written in my spare time at KU are also included
+Solutions written for the KU programming team and code written in my spare time at KU are also included

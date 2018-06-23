@@ -1,5 +1,5 @@
 CSC 235 - Computer Organization and Assembly Language
-Dr. Spiegel
+Dr. Daniel Spiegel
 Kutztown University
 Fall 2014
 

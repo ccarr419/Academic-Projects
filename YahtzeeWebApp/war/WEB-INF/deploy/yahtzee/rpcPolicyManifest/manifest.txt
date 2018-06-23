@@ -1,3 +1,0 @@
-# Module yahtzee
-# RPC service class, partial path of RPC policy file
-com.yahtzee.client.GreetingService, D6BD36DE9115F298CB7F86CA6ECDF91B.gwt.rpc

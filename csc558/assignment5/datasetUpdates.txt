@@ -1,0 +1,33 @@
+1.) Made new attribute __sym__ from Weka.AddExpression that adds all attributes that represent a symbol in an if else
+	statement and returned 1 if the sum was over 0 and returned 0 if otherwise.
+	ifelse((a1+a2+a3+...+an)>0,1,0) -N __sym__
+
+1.) Made new attribute __num__ from Weka.AddExpression that adds all attributes that represent a number in an if else
+	statement and returned 1 if the sum was over 0 and returned 0 if otherwise.
+	ifelse((a1+a2+a3+...+an)>0,1,0) -N __sym__
+
+3.) Reordered to put new derived attributes first
+
+2.) Removed all symbol attributes with Weka.Reorder
+
+3.) Removed all number attributes with Weka.Reorder
+...Accuracy was slightly less than before (not much ~0.14%)
+...Seems as though having the symbols and numbers separate instead of one variable improved accuracy
+
+4.) Restored everything back, removed __URL__ and __NAN__ attributes.
+...Accuracy stayed the same as with them. Stayed removed.
+
+5.) Removed all but explicit words.
+... Accuracy not much better than ZeroR, mostly no real predictions going on
+
+5.) Removed what I call "spoiler words" or words that have words included or similar to the nominal classification.
+...Accurary dropped more than 25%! From 56.8069% to 31.3545%!
+
+6.) Removed all words except the spoiler words.
+...Accuracy only dropped by 4%. From 56.8069% to 52.5533%. Dataset is biased... 
+..."anonymous" volunteer posts were either fabricated or logged after being aware 
+	that their posts would be used for this purpose.
+...Dataset unbalance could have also skewed results
+
+https://www.careerplanner.com/MB2/TypeInPopulation.cfm
+http://www.myersbriggs.org/my-mbti-personality-type/my-mbti-results/how-frequent-is-my-type.htm?bhcp=1

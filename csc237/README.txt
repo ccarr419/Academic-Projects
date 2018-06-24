@@ -1,4 +1,4 @@
-CSC 237 - Data Structures II
+CSC 237 - Data Structures
 Dr. Spiegel
 Kutztown University
 Spring 2014

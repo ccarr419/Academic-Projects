@@ -1,4 +1,4 @@
-Most projects were planned, written and managed from beginning to completion by I, Christian Carreras with the exception of some files being required for my files to work properly. All projects were completed at Kutztown University of Pennsylvania for course credit from August 2012 to May 2018. Descriptions of courses and projects will be included where necessary.
+All projects were planned, written and managed from beginning to completion by I, Christian Carreras with the exception of some files being required for my files to work properly or team projects. All projects were completed at Kutztown University of Pennsylvania for course credit from August 2012 to May 2018. Descriptions of courses and projects will be included where necessary.
 
 A higher course number generally represents a more recent and difficult course/project
 Course numbers < 400 represent undergrad courses, course numbers >= 400 represent grad courses
@@ -28,20 +28,5 @@ COURSE LIST:
 * CSC 554 - Project Management
 * CSC 558 - Data Mining and Predictive Analytics II
 * CSC 570 - Independent Study and/or Projects in Computer Science
------------------------------------------------------------------
-
-OTHER COURSES NOT SHOWN:
------------------------------------------------------------------
-* CSC 125 - Discrete Mathematics for Computing I
-* CSC 225 - Discrete Mathematics for Computing II
-* CSC 325 - Introduction to Computer Science Theory
-* CSC 343 - Operating Systems
-* CSC 458 - Data Mining and Predictive Analytics I
-* MAT 140 - Applied Statistical Methods
-* MAT 181 - Calculus I
-* MAT 224 - Foundations of Higher Mathematics
-* MAT 240 - Synthetic Geometry
-* MAT 260 - Linear Algebra I
------------------------------------------------------------------
 
 Solutions written for the KU programming team and code written in my spare time at KU are also included

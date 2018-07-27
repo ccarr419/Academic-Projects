@@ -12,6 +12,7 @@ COURSE LIST:
 * CSC 241 - Advanced Visual Basic Programming
 * CSC 242 - Web Programming
 * CSC 310 - Programming Languages
+* CSC 320 - Game Development for Computer Scientists I
 * CSC 330 - Introduction to Mobile Architecture and Systems
 * CSC 342 - Web Technologies
 * CSC 354 - Software Engineering I

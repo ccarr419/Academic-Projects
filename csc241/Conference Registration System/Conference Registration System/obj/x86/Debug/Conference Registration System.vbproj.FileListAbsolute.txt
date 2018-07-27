@@ -1,0 +1,24 @@
+C:\Users\Chris\AppData\Local\Temporary Projects\Conference Registration System\bin\Debug\Conference Registration System.exe
+C:\Users\Chris\AppData\Local\Temporary Projects\Conference Registration System\bin\Debug\Conference Registration System.pdb
+C:\Users\Chris\AppData\Local\Temporary Projects\Conference Registration System\bin\Debug\Conference Registration System.xml
+C:\Users\Chris\AppData\Local\Temporary Projects\Conference Registration System\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Chris\AppData\Local\Temporary Projects\Conference Registration System\obj\x86\Debug\Conference_Registration_System.ConferenceOptions.resources
+C:\Users\Chris\AppData\Local\Temporary Projects\Conference Registration System\obj\x86\Debug\Conference_Registration_System.MainForm1.resources
+C:\Users\Chris\AppData\Local\Temporary Projects\Conference Registration System\obj\x86\Debug\Conference_Registration_System.Resources.resources
+C:\Users\Chris\AppData\Local\Temporary Projects\Conference Registration System\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Chris\AppData\Local\Temporary Projects\Conference Registration System\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Chris\AppData\Local\Temporary Projects\Conference Registration System\obj\x86\Debug\Conference Registration System.exe
+C:\Users\Chris\AppData\Local\Temporary Projects\Conference Registration System\obj\x86\Debug\Conference Registration System.xml
+C:\Users\Chris\AppData\Local\Temporary Projects\Conference Registration System\obj\x86\Debug\Conference Registration System.pdb
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Conference Registration System\Conference Registration System\obj\x86\Debug\Conference Registration System.exe
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Conference Registration System\Conference Registration System\obj\x86\Debug\Conference Registration System.xml
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Conference Registration System\Conference Registration System\obj\x86\Debug\Conference Registration System.pdb
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Conference Registration System\Conference Registration System\bin\Debug\Conference Registration System.exe
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Conference Registration System\Conference Registration System\bin\Debug\Conference Registration System.pdb
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Conference Registration System\Conference Registration System\bin\Debug\Conference Registration System.xml
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Conference Registration System\Conference Registration System\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Conference Registration System\Conference Registration System\obj\x86\Debug\Conference_Registration_System.ConferenceOptions.resources
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Conference Registration System\Conference Registration System\obj\x86\Debug\Conference_Registration_System.MainForm.resources
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Conference Registration System\Conference Registration System\obj\x86\Debug\Conference_Registration_System.Resources.resources
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Conference Registration System\Conference Registration System\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Conference Registration System\Conference Registration System\obj\x86\Debug\GenerateResource.write.1.tlog

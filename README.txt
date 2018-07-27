@@ -20,6 +20,7 @@ COURSE LIST:
 -----------------------------------------------------------------
 * CSC 402 - Advanced Data Structures
 * CSC 421 - Web-Based Software Design and Development
+* CSC 423 - Game Development for Computer Scientists II
 * CSC 510 - Advanced Operating Systems
 * CSC 520 - Advanced Object-Oriented Programming
 * CSC 548 - Artificial Intelligence II

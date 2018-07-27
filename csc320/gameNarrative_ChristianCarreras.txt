@@ -1,0 +1,29 @@
+Christian Carreras
+CSC 330
+Name: Tales of Mortise (Working Title)
+
+Prologue: 
+ * Hero for hire as main character, chosen by player
+ * People in endless sleep ever since wizard moved to village a week ago
+ * Confront the wizard
+ * Become trapped in an enchanted book
+ * The enchanted book is a book of fairy tales
+
+Story:
+ * Help protagonist of the each story
+ * Defeat the antagonist of each story to try to find a way to escape
+ * Book at the end with a single word of the escape enchantment
+ * Transported to next story at the end of each story
+ * Time moves slower in the book
+ * Trapped townsfolk claim to have been trapped for months or years
+ * Helpful advice from protagonists and trapped villagers
+ * Shops for weapons
+ * Currency for trades
+ * Dieing is not too forgiving
+
+Epilogue:
+ * Speak the full enchantment learned within the stories to escape the book
+ * Wake up in the wizard's hall after learning all the words
+ * Fight wizard over book
+ * Trap wizard in book
+ * Release the towns people

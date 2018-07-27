@@ -8,6 +8,7 @@ COURSE LIST:
 * CSC 136 - Computer Science II
 * CSC 235 - Computer Organization and Assembly Language
 * CSC 237 - Data Structures
+* CSC 241 - Advanced Visual Basic Programming
 * CSC 242 - Web Programming
 * CSC 310 - Programming Languages
 * CSC 330 - Introduction to Mobile Architecture and Systems

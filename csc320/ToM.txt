@@ -1,0 +1,158 @@
+Weapons
+---------------------------------------------------------
+Damage: 0-5 w/ 0 being no damage, 5 being most damage
+Speed: 1-5 w/ 1 being fastest, 5 being slowest
+Reach: 1-9 w/ 1 being closest, 9 being furthest
+Throw Speed: 1-5 w/ 1 being fastest, 5 being slowest
+Throw Distance: 1-9 w/ 1 being closest, 9 being furthest
+Throw Damage: 1-5 w/ 1 being least damage, 5 being most
+
+ * Fist (Default)
+	- Damage: 1 
+	- Speed: 1 
+	- Reach: 1 
+	- Throw Speed: n/a
+	- Throw Distance: n/a
+	- Throw Damage: n/a
+	- Uses: Unlimited
+ * Dagger
+	- Damage: 2
+	- Speed: 1
+	- Reach: 1
+	- Throw Speed: 1
+	- Throw Distance: 5
+	- Throw Damage: 2
+	- Uses: Unlimited
+ * Longsword
+	- Damage: 3
+	- Speed: 3
+	- Reach: 2
+	- Throw Speed: 3
+	- Throw Distance: 3
+	- Throw Damage: 2
+	- Uses: Unlimited
+ * Shortbow
+	- Damage: 2
+	- Speed: 2
+	- Reach: 8
+	- Throw Speed: 2
+	- Throw Distance: 4
+	- Throw Damage: 1
+	- Uses: Unlimited
+ * Crossbow
+	- Damage: 3
+	- Speed: 3
+	- Reach: 9
+	- Throw Speed: 3
+	- Throw Distance: 3
+	- Throw Damage: 1
+	- Uses: Unlimited
+ * Fire Staff
+	- Damage: 4 (Burn Enemy Scripting)
+	- Speed: 2
+	- Reach: 9
+	- Throw Speed: 3
+	- Throw Distance: 2
+	- Throw Damage: 4 (Burn Enemy Scripting)
+	- Uses: 25 uses
+ * Ice Staff
+	- Damage: 0 (Freeze Enemy Scripting)
+	- Speed: 2
+	- Reach: 9
+	- Throw Speed: 3
+	- Throw Distance: 2
+	- Throw Damage: 0 (Freeze Enemey Scripting)
+	- Uses: 25 uses
+ * Empty Staff
+	- Damage: 2
+	- Speed: 2
+	- Reach: 3
+	- Throw Speed: 3
+	- Throw Distance: 2
+	- Throw Damage: 1
+	- Uses: Unlimited
+ * Shield
+	- Damage: 1
+	- Speed: 2
+	- Reach: 1
+	- Throw Speed: 2
+	- Throw Distance: 4
+	- Throw Damage: 3
+	- Uses: Unlimited
+ * Bomb
+	- Damage: 5
+	- Speed: 2
+	- Reach: 5
+	- Throw Speed: 1
+	- Throw Distance: 5
+	- Throw Damage: 1
+	- Uses: Limited
+ * Torch
+	- Damage: 1 (Burn Enemy Script)
+	- Speed: 1
+	- Reach: 1
+	- Throw Speed: 1
+	- Throw Distance: 5
+	- Throw Damage: 2 (Burn Enemy Script)
+	- Uses: Unlimited until put out
+
+Items
+---------------------------------------------------------
+ * Health Potion
+	- Heals player to full health
+ * Endurance Potion
+	- Adds one heart to player health
+ * Magic Book Page
+	- Adds magic book page to player invetory
+	- Allows The creating of a tear to write something into the story
+ * Bomb
+	- Adds bomb(s) to player invetory
+	- Can be thrown or placed to destroy and cause massive damage
+ * Grapple
+	- Adds grapple(s) to the player invetory
+	- Can be used to climb up or down, swing across to different areas or pull enemies
+ * Armor
+	- Adds armor buff to health
+	- Armor is lost before health
+	- Different armor have different buffs
+ * Coins
+	- Adds coin(s) to the player invetory
+	- Used to buy items or weapons from a trader
+ * Map
+	- Unlocks a minimap of the level for the player
+ * Torch
+	- Lights dark areas
+	- Doubles as a weapon
+	- Extinguishes when underwater
+
+Rare/Special Items
+---------------------------------------------------------
+ * Skeleton Key
+	- Unlocks any locked door
+ * Fire Enchantment
+	- Enchants current weapon with fire damage
+	- Use on empty staff to make a fire staff
+	- 25 uses once in invetory
+ * Ice Enchantment
+	- Enchants current weapon with freezing damage
+	- Use on empty staff to make a ice staff
+	- 25 uses once in invetory
+ * Eyes of Mortise
+	- Allows player to see more tears
+	- Allows player to see traps
+	- Allows user to see in the dark
+ * Mysterious Ring
+	- Turn invisible for 30 seconds in exchange for a heart
+
+Fairy Tales
+---------------------------------------------------------
+ * Rapunzel
+ * Hansel and Grethel
+ * Little Snow White
+ * Rumplestiltskin
+ * Little Red Riding Hood
+ * Etc.
+
+Enemies
+---------------------------------------------------------
+ * Fairy Tale specific

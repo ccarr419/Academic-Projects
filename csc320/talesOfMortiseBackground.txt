@@ -1,0 +1,99 @@
+MENU OPTIONS:
+
+- Music playing in the background. Possibilites: lute, orchestra, medieval, etc.
+- Sounds play when moving to different selections in the menu
+- Dark background, possibly stone bricks with torches
+- Title will be ol'timey font or something more unique
+
+TALES OF MORTISE
+* Play - Start the game from the beginning
+* Chapters - Start the game from specific chapter(level) once unlocked
+* Settings - Change game settings such as volume, brightness, button map, etc.
+
+	Chapters:
+	* Display chapters in a book and let the player flip through the pages to select the level
+	* Chapters will only be unlocked once completing them in a play through
+	* Chapters not unlocked will be greyed out
+	* Chapters will include a picture to better describe the chapter
+
+	Settings:
+	* Audio
+		- Music Volume
+		- FX Volume
+	* Visuals
+		- Brightness
+	* Gameplay
+		- Button Map
+		- Controller(x)
+		- Language(?)
+
+	Play:
+	* Screen fades to black... Once Upon A Time...
+
+
+PART I: Prologue - Only if play is pressed
+* A village(not named) secluded from most troubles is where the story starts off.
+* An evil wizard(not named) moves to the outskirts of the town and creates a tower.
+* Villagers are frightened by the spire in the distance but do not immediately panic.
+* As time goes by their torment will soon be realized.
+* The villagers start entering a never ending sleep, yet they still live.
+* The villagers believe it is the work of the wizard of the tower but they are too fearful to act on their own.
+* Seeking help in any way possible, they send out flyers for a hero for hire appear around the country.
+* The hero of the story, fresh off a previous adventure stumbles upon the flyer
+* The hero goes to the town to confront the villagers and learn of their strange problem.
+* Since the hero is of stronger will and merit, they head off for the ominous tower to seek out the wizard.
+* The hero enters the tower, bewildered by the fact of its unguarded yet unwelcome nature.
+* They feel as though they have been expected.
+* In the main corridor waits the wizard, he has been expecting the hero.
+* Startled, the  hero ask who the wizard is
+* The wizard says, "My name is of little importance. It is you however, that I am interested in."
+* "What do you mean?" Says the hero. 
+* "Your adventurous heart and couragous soul is exactly what I need." Says the wizard
+* "I do not understand. What happened to the villagers?" Says the hero
+* "I knew they would come asking questions but not dare come themselves."
+* "They are too weak, too fearful, they needed a hero." Said the wizard
+* Choosing the remain silent, the hero let the wizard continue.
+* "So I preyed on the frail villagers so that a hero like yourself would arrive." Said the wizard
+* "So you put all those villagers in a never ending sleep?" Said the hero
+* "Yes but they were just pawns, inconsiquential to the real work at hand"
+* "You are the real prize, the final puzzle piece" Said the wizard
+* "You won't get away with this!" Says the hero - Draws weapon
+* Unflinchingly the wizard continues, "With your soul I can power my magic one hundredfold"
+* The hero starts charging towards the wizard...
+* The wizard slowyly pulls out and opens a book...
+* "Then no one will doubt or question my power again"
+* The hero's soul is sucked into the book while his body lays helpless
+* The wizard closes the book to show the player it is a book of fairy tales and the screen fades to black.
+
+OBJECTIVE: Find a way to release your soul from the book and the souls of the villagers by going
+from chapter to chapter and different fairy tales.
+
+BACKGROUND: To find an exit from the book you must the mystic, enchanted book at the end of
+every chapter. This will act as a porthole to the next chapter. Each chapter has been corrupted by
+the wizard's magic and thus is full of monsters, traps, and puzzles. However his magic has also
+created tears in each story that you can use to your advantage to write things into the story to
+help you along the way. Each story is modeled after a real life fairy tale where the setting, monsters,
+traps, puzzles, protagonist, antagonist, people, music, etc. take inspiration from. Trapped villagers
+believe they have been trapped for years or decades because time moves incredible slower on the outside.
+When spoken to, the villagers have no recollection of how they got there, but offer help all the same.
+Helpful characters from each fairy tale have no notion of the outside world but do know something
+weird is happening and will help you in anyway they can or may need some incentive.
+
+EPILOGUE: The hero escapes from the book only to discover that little time has past since they
+were trapped. Their body still lies where it was when they were trapped. The hero and the wizard
+commence in one final battle. The hero defeats the wizard and traps him inside his own book. He
+then releases the the villagers who were trapped. All the villagers make their way to the tower
+to congratulate the hero and thank them for their service. Everyone leaves the tower to celebrate.
+The book that the wizard was trapped in glows sligtly and the pages begin to flutter. A barely
+audible evil laugh in the background can be heard and the book closes. Fade to black. Game over.
+
+CHAPTER I: Little Red Riding Hood
+	Protagonist: LRRH
+	Enemies: Wolves and other woodland enemies
+	Setting: Forest, caves, cabins, mountains
+	Lighting: Dim, many shadows, low contrast - not set in stone
+	Sounds:
+		* Enemies making howling noses or other grunting/animal noises
+		* Background forest noises: birds chirping, trees swaying, etc.
+		* Music: Ambient, fit for a forest, dark
+OTHER CHAPTERS TBD

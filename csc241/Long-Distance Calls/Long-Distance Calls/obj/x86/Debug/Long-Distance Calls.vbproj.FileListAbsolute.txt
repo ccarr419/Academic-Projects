@@ -1,0 +1,22 @@
+C:\Users\Chris\AppData\Local\Temporary Projects\Long-Distance Calls\bin\Debug\Long-Distance Calls.exe
+C:\Users\Chris\AppData\Local\Temporary Projects\Long-Distance Calls\bin\Debug\Long-Distance Calls.pdb
+C:\Users\Chris\AppData\Local\Temporary Projects\Long-Distance Calls\bin\Debug\Long-Distance Calls.xml
+C:\Users\Chris\AppData\Local\Temporary Projects\Long-Distance Calls\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Chris\AppData\Local\Temporary Projects\Long-Distance Calls\obj\x86\Debug\Long_Distance_Calls.Form1.resources
+C:\Users\Chris\AppData\Local\Temporary Projects\Long-Distance Calls\obj\x86\Debug\Long_Distance_Calls.Resources.resources
+C:\Users\Chris\AppData\Local\Temporary Projects\Long-Distance Calls\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Chris\AppData\Local\Temporary Projects\Long-Distance Calls\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Chris\AppData\Local\Temporary Projects\Long-Distance Calls\obj\x86\Debug\Long-Distance Calls.exe
+C:\Users\Chris\AppData\Local\Temporary Projects\Long-Distance Calls\obj\x86\Debug\Long-Distance Calls.xml
+C:\Users\Chris\AppData\Local\Temporary Projects\Long-Distance Calls\obj\x86\Debug\Long-Distance Calls.pdb
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Long-Distance Calls\Long-Distance Calls\obj\x86\Debug\Long-Distance Calls.exe
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Long-Distance Calls\Long-Distance Calls\obj\x86\Debug\Long-Distance Calls.xml
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Long-Distance Calls\Long-Distance Calls\obj\x86\Debug\Long-Distance Calls.pdb
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Long-Distance Calls\Long-Distance Calls\bin\Debug\Long-Distance Calls.exe
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Long-Distance Calls\Long-Distance Calls\bin\Debug\Long-Distance Calls.pdb
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Long-Distance Calls\Long-Distance Calls\bin\Debug\Long-Distance Calls.xml
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Long-Distance Calls\Long-Distance Calls\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Long-Distance Calls\Long-Distance Calls\obj\x86\Debug\Long_Distance_Calls.Form1.resources
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Long-Distance Calls\Long-Distance Calls\obj\x86\Debug\Long_Distance_Calls.Resources.resources
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Long-Distance Calls\Long-Distance Calls\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Long-Distance Calls\Long-Distance Calls\obj\x86\Debug\GenerateResource.write.1.tlog

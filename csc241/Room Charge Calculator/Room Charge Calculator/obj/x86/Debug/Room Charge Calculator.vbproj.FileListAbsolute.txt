@@ -1,0 +1,33 @@
+C:\Users\Chris\Documents\Spring 2013 Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\bin\Debug\Room Charge Calculator.exe
+C:\Users\Chris\Documents\Spring 2013 Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\bin\Debug\Room Charge Calculator.pdb
+C:\Users\Chris\Documents\Spring 2013 Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\bin\Debug\Room Charge Calculator.xml
+C:\Users\Chris\Documents\Spring 2013 Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Chris\Documents\Spring 2013 Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\Room_Charge_Calculator.Form1.resources
+C:\Users\Chris\Documents\Spring 2013 Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\Room_Charge_Calculator.Resources.resources
+C:\Users\Chris\Documents\Spring 2013 Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Chris\Documents\Spring 2013 Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Chris\Documents\Spring 2013 Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\Room Charge Calculator.exe
+C:\Users\Chris\Documents\Spring 2013 Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\Room Charge Calculator.xml
+C:\Users\Chris\Documents\Spring 2013 Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\Room Charge Calculator.pdb
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\Room Charge Calculator.exe
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\Room Charge Calculator.xml
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\Room Charge Calculator.pdb
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\bin\Debug\Room Charge Calculator.exe
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\bin\Debug\Room Charge Calculator.pdb
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\bin\Debug\Room Charge Calculator.xml
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\Room_Charge_Calculator.Form1.resources
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\Room_Charge_Calculator.Resources.resources
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Tutorials\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\Room Charge Calculator.exe
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\Room Charge Calculator.xml
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\Room Charge Calculator.pdb
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Room Charge Calculator\Room Charge Calculator\bin\Debug\Room Charge Calculator.exe
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Room Charge Calculator\Room Charge Calculator\bin\Debug\Room Charge Calculator.pdb
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Room Charge Calculator\Room Charge Calculator\bin\Debug\Room Charge Calculator.xml
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\Room_Charge_Calculator.Form1.resources
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\Room_Charge_Calculator.Resources.resources
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Room Charge Calculator\Room Charge Calculator\obj\x86\Debug\GenerateResource.write.1.tlog

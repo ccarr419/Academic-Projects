@@ -4,6 +4,7 @@ A higher course number generally represents a more recent and difficult course/p
 Course numbers < 400 represent undergrad courses, course numbers >= 400 represent grad courses
 
 COURSE LIST:
+-----------------------------------------------------------------
 * CSC 135 - Computer Science I
 * CSC 136 - Computer Science II
 * CSC 235 - Computer Organization and Assembly Language
@@ -13,6 +14,9 @@ COURSE LIST:
 * CSC 310 - Programming Languages
 * CSC 330 - Introduction to Mobile Architecture and Systems
 * CSC 342 - Web Technologies
+* CSC 354 - Software Engineering I
+* CSC 355 - Software Engineering II
+-----------------------------------------------------------------
 * CSC 402 - Advanced Data Structures
 * CSC 421 - Web-Based Software Design and Development
 * CSC 510 - Advanced Operating Systems
@@ -21,5 +25,6 @@ COURSE LIST:
 * CSC 552 - Advanced UNIX Programming
 * CSC 558 - Data Mining and Predictive Analytics II
 * CSC 570 - Independent Study and/or Projects in Computer Science
+-----------------------------------------------------------------
 
 Solutions written for the KU programming team and code written in my spare time at KU are also included

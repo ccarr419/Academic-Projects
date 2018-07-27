@@ -1,5 +1,5 @@
 CSC 242 - Web Programming
-Dr. Taqueer Hussain
+Dr. Tauqeer Hussain
 Kutztown University
 Fall 2013
 

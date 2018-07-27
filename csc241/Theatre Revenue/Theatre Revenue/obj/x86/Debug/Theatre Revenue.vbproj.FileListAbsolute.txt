@@ -1,0 +1,11 @@
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Theatre Revenue\Theatre Revenue\bin\Debug\Theatre Revenue.exe
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Theatre Revenue\Theatre Revenue\bin\Debug\Theatre Revenue.pdb
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Theatre Revenue\Theatre Revenue\bin\Debug\Theatre Revenue.xml
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Theatre Revenue\Theatre Revenue\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Theatre Revenue\Theatre Revenue\obj\x86\Debug\Theatre_Revenue.Form1.resources
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Theatre Revenue\Theatre Revenue\obj\x86\Debug\Theatre_Revenue.Resources.resources
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Theatre Revenue\Theatre Revenue\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Theatre Revenue\Theatre Revenue\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Theatre Revenue\Theatre Revenue\obj\x86\Debug\Theatre Revenue.exe
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Theatre Revenue\Theatre Revenue\obj\x86\Debug\Theatre Revenue.xml
+C:\Users\Chris\Documents\2013 Spring Semester\CSC 241\Homework\Theatre Revenue\Theatre Revenue\obj\x86\Debug\Theatre Revenue.pdb

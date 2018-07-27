@@ -12,6 +12,7 @@ COURSE LIST:
 * CSC 242 - Web Programming
 * CSC 310 - Programming Languages
 * CSC 330 - Introduction to Mobile Architecture and Systems
+* CSC 342 - Web Technologies
 * CSC 402 - Advanced Data Structures
 * CSC 421 - Web-Based Software Design and Development
 * CSC 510 - Advanced Operating Systems

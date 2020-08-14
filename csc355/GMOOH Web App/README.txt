@@ -1,10 +1,5 @@
 GMOOH is a web application created by myself and the other members of my senior seminar class at Kutztown University of Pennsylvania. I was team leader of the interface group. My responsibilites were leading my other teammates by dividing tasks, setting deadlines, checking in with other teams, and writing the code for my parts of the project. My team and I used HTML, CSS, JavaScript and PHP to create the look and feel of the website without the use of a framework.
 
-Demo Links:
-http://gmooh.000webhostapp.com/Interface/createNewChecksheet.php
-http://gmooh.000webhostapp.com/
-*Seeing as I had to change servers and recreate the database from scratch for this preview some things may not work as intended or preform the same as when it was originally released*
-
 Credits Go To...
 Professor: Dr. Kaplan
 Team Manager: Robert Thomas

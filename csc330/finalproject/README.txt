@@ -2,7 +2,4 @@ Author: Christian Carreras
 Date: May 2016
 Course: CSC 330 Application Development
 
-Demo Link:
-https://appetize.io/app/rq3cxdyyjwpgmk7dvnw2uxq93m
-
 I developed an Android application that would simulate a game of blackjack. The user must first create an account and be entered into the app database. Then they may log in and see their balance (digital currency to use for bets in-game). Every user starts with an initial 1000 chips. From there the user may begin to play by placing a bet and dealing from the deck or reshuffling the deck if deemed necessary. At any time during the game the user can end the game and go back to their profile page. During the game the user's options are: hit (request an additional card), stick (end your turn), fold (forfeit the round), double down (double your bet and agree to take one additional card and end your turn), or split hand (only appears when player is dealt cards of the same number on initial dealing). The point of splitting a hand is to give the user two hands which behave the same as a normal hand. These two hands will give the user double the chance to win. Losing a round means the player relinquishes their bet, winning a round means they will keep their bet and win and equal amount in addition to their original bet. The user can have a negative balance to represent owing the house.
